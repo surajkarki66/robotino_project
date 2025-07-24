@@ -1,0 +1,10 @@
+Literatures:
+- http://www2.informatik.uni-freiburg.de/~stachnis/pdf/grisetti10titsmag.pdf
+
+Videos:
+- https://www.youtube.com/watch?v=saVZtgPyyJQ
+
+Tutorials:
+- https://www.mathworks.com/help/nav/mapping.html?s_tid=CRUX_lftnav
+- https://www.mathworks.com/help/nav/ref/slammapbuilder-app.html
+- https://www.mathworks.com/help/lidar/ug/build-map-from-2d-lidar-scans-using-slam.html
