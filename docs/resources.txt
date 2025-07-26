@@ -3,6 +3,7 @@ Literatures:
 
 Videos:
 - https://www.youtube.com/watch?v=saVZtgPyyJQ
+- https://www.youtube.com/watch?v=QR3U1dgc5RE
 
 Tutorials:
 - https://www.mathworks.com/help/nav/ug/choose-a-slam-workflow-based-on-sensor-data.html
