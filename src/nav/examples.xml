@@ -1,0 +1,2631 @@
+<?xml version="1.0"?>
+<demos>
+  <demoitem>
+    <source>InterpolateBetweenStatesInSE2Example</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex02225430</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>AddFactorTwoPoseSE3ObjectToFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex02391348</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateEgocentricOccupancyMapsUsingRangeSensorsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex02599346</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1562861831">exampleHelperPlotLidar.m</file>
+    <file component="nav" timestamp="1562861831">exampleHelperPlotRobot.m</file>
+    <file component="nav" timestamp="1562861831">exampleHelperUpdateRobotAndLidar.m</file>
+    <file component="nav" timestamp="1556205323">mapData_rayTracingTrajectory.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>OptimizeA2DPoseGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex04523216</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1560770536">intel-2d-posegraph.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>InterpolateBetweenStatesInSE3Example</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex05456225</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>MatchLaserScansExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex06034124</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>optim</product>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathBetweenTwoStatesInDubinsStateSpaceExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex06612523</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1562697488">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>BuildAndTuneAMapUsingLidarScansWithSLAMExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex06635841</metadata>
+    <thumbnail>html/BuildAndTuneAMapUsingLidarScansWithSLAMExample_05.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1586461666">slamLidarScans.mat</file>
+    <file component="nav" timestamp="1737555922">slamMapBuilderOccMap.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>GenerateWheelTicksFromBicycleVehiclePoseExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex06775111</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>WheelEncoderErrorSourcesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex07479249</metadata>
+    <thumbnail>html/WheelEncoderErrorSourcesExample_03.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ReduceDriftIn3DVisualOdometryTrajectoryUsingPoseGraphsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex07616174</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1560706711">estimatedpose.mat</file>
+    <file component="nav" timestamp="1560706711">groundtruthlocations.mat</file>
+    <file component="nav" timestamp="1560706711">loopedge.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateNavPathBasedOnMultipleWaypointsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex07842414</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>PlotGeographicPositionUsingGPSConnectedToHostComputerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex08467841</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>InterpolatePosesForDubinsPathExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex08499886</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ComputeOdometryFromWheelEncoderTicksForBicycleExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex08774524</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ComputeOdometryFromWheelEncoderTicksForUnicycleExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex08904410</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateAndModifyCapsuleBasedEgoBodiesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex09407750</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>InsertLaserScansIntoOccupancyMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex09507239</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>GetSatelliteLookAnglesForReceiverPositionExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex09608730</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>WriteConfigurationCommandsToGPSReceiverExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex10044320</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateDeepCopyOfStateValidatorObject3DOccupancyMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex10268380</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>FindClosestBoundaryInSignedDistanceMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex10501316</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>PlanMobileRobotPathsUsingRRTExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex10889913</metadata>
+    <thumbnail>html/PlanMobileRobotPathsUsingRRTExample_02.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1718973046">ExampleHelperStateSpaceOneSidedDubins.m</file>
+    <file component="nav" timestamp="1667291758">exampleHelperCheckIfGoal.m</file>
+    <file component="nav" timestamp="1562626536">office_area_gridmap.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>CalculateGradientsUsingSignedDistanceMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex11284588</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>OptimizeFactorGraphWithCustomOptionsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex11409214</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>GetRayIntersectionPointsOn3DOccupancyMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex11477524</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1614589406">citymap.ot</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateCopyOfNavPathObjectExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex11711330</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>LandmarkSLAMUsingAprilTagMarkersExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex11793719</metadata>
+    <thumbnail>html/LandmarkSLAMUsingAprilTagMarkersExample_02.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>vision</product>
+    <file component="nav" timestamp="1608702209">cameraParams.mat</file>
+    <file component="nav" timestamp="1655214257">exampleHelperComputeRelativePose.m</file>
+    <file component="nav" timestamp="1655214257">exampleHelperComputeDifference.m</file>
+    <file component="nav" timestamp="1655214257">exampleHelperExtractDataFromRosbag.m</file>
+    <file component="nav" timestamp="1655214257">exampleHelperShowFactorGraphResult.m</file>
+  </demoitem>
+  <demoitem>
+    <source>GetOccupancyValuesAndCheckOccupancyStatusExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex11843630</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>PlotPathOfBicycleKinematicRobotExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex12882376</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>PerformMotionPlanningUsingGaussianStateSamplingExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex13260356</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1688823936">mapData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ShortenDubinsPathExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex13491507</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>AddFactorIMUObjectToFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex15307090</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>GetNodeTypeOfNodesSpecifiedByFactorExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex15403458</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>PartitionLongitudinalTerminalStatesTrajectoryGenerationExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex15715831</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>AddLinksBetweenMultipleStatesInGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex15910759</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1707739414">navGraphData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ObstacleFreePathPlanningUsingHybridAStarExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex15995783</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1563188454">parkingLotCostVal.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ReadGPSNavigationMessageDataFromSEMAlmanacFileExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex16538648</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>GenerateCodeForPathPlanningUsingRRTStarPlannerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex16577261</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>matlabcoder</product>
+    <file component="nav" timestamp="1655204024">codegenRRTStar.m</file>
+    <file component="nav" timestamp="1655204024">codegenRRTStar_testbench.m</file>
+  </demoitem>
+  <demoitem>
+    <source>MarginalizeFactorsInFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex17306707</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1732538055">exampleSimple3DFGStateData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>Benchmark2DPathPlannersExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex17456253</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1606126296">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>PerformSLAMUsingLidarScansExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex17590128</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1555925413">garage_fl1_southend.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ConnectPosesUsingDubinsConnectionPathExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex17799548</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ReadDataFromGPSReceiverAsMatrixExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex18411445</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>PropagateMobileRobotExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex18795954</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ImportFactorGraphFromG2oFileExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex19229805</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1683822076">huskyGazebo2DPG.g2o</file>
+  </demoitem>
+  <demoitem>
+    <source>OptimizationBasedPathSmoothingExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex20018251</metadata>
+    <thumbnail>html/OptimizationBasedPathSmoothingExample_08.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1635165337">parkingMap.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>GenerateNodeIDsBySpecifyingNumberOfNodesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex20345908</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>GetNodeIDsOfFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex20494119</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CreatePathRepresentingControlBasedKinematicTrajectoryExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex20987189</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ReadGPSNavigationMessageDataFromYUMAAlmanacFileExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex21594291</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>DecomposePolygonIntoSetOfNonoverlappingPolygonsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex21627746</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1738075910">exampleSimplePolygonVertices.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>PoseEstimationUsingIMUAnd2DLidarScanMatchingExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex21990050</metadata>
+    <thumbnail>html/PoseEstimationUsingIMUAnd2DLidarScanMatchingExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1563190270">offlineData.mat</file>
+    <file component="nav" timestamp="1562888011">exampleHelperComputeTrajPose.m</file>
+  </demoitem>
+  <demoitem>
+    <source>ValidatePathThrough3DOccupancyMapEnvironmentExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex22148023</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1592998592">dMapCityBlock.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ConvertOccupancyMapToMatrixExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex22563364</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>EstimatePosesUsing2DPoseFactorsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex22919689</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>TractorTrailerPlanningUsingPlannerControlRRTExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex23271831</metadata>
+    <thumbnail>html/TractorTrailerPlanningUsingPlannerControlRRTExample_05.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1623375369">NonConvex.mat</file>
+    <file component="nav" timestamp="1623375369">Slalom.mat</file>
+    <file component="nav" timestamp="1625587927">exampleHelperCalculateDistanceMetric.m</file>
+    <file component="nav" timestamp="1625587927">exampleHelperCalculateLQGains.m</file>
+    <file component="nav" timestamp="1623375369">exampleHelperCalculateLookaheadPoint.m</file>
+    <file component="nav" timestamp="1623375369">exampleHelperCollisionChecker.m</file>
+    <file component="nav" timestamp="1623375369">exampleHelperComputeTrajectoryCost.m</file>
+    <file component="nav" timestamp="1623375369">exampleHelperExpandToFullState.m</file>
+    <file component="nav" timestamp="1623375369">exampleHelperGoalReachedFunction.m</file>
+    <file component="nav" timestamp="1623375369">exampleHelperGoalSampler.m</file>
+    <file component="nav" timestamp="1623375369">exampleHelperPlotTruck.m</file>
+    <file component="nav" timestamp="1625587927">exampleHelperPropagateTruck.m</file>
+    <file component="nav" timestamp="1625587927">exampleHelperPurePursuitGetSteering.m</file>
+    <file component="nav" timestamp="1625587927">exampleHelperShowOpenLoopDynamics.m</file>
+    <file component="nav" timestamp="1625587927">exampleHelperStateDerivative.m</file>
+    <file component="nav" timestamp="1623375369">exampleHelperTargetReachedFunction.m</file>
+    <file component="nav" timestamp="1626405078">exampleHelperTruckPropagator.m</file>
+    <file component="nav" timestamp="1623375369">exampleHelperTruckStateSpace.m</file>
+    <file component="nav" timestamp="1626405078">exampleHelperTruckValidator.m</file>
+    <file component="nav" timestamp="1626405078">genFastCC.m</file>
+    <file component="nav" timestamp="1623375369">parkingScenario.mat</file>
+    <dir component="nav" timestamp="1735815535">helperImages</dir>
+  </demoitem>
+  <demoitem>
+    <source>BuildOccupancyMapFromDepthImagesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex23403401</metadata>
+    <thumbnail>html/BuildOccupancyMapFromDepthImagesExample_02.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1560706711">estimatedpose.mat</file>
+    <file component="nav" timestamp="1560706711">groundtruthlocations.mat</file>
+    <file component="nav" timestamp="1560706711">loopedge.mat</file>
+    <file component="nav" timestamp="1560708450">depthimagearray.mat</file>
+    <file component="nav" timestamp="1560708450">freburgK.mat</file>
+    <file component="nav" timestamp="1662556262">exampleHelperExtract3DPointsFromDepthImage.m</file>
+  </demoitem>
+  <demoitem>
+    <source>BenchmarkingPathPlannersInWarehouseMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex23647004</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1639495345">wareHouseMap.mat</file>
+    <file component="nav" timestamp="1639575691">helperPlotAveragedMetrics.m</file>
+    <file component="nav" timestamp="1639575691">helperSampleSelectedAreaOnMap.m</file>
+    <file component="nav" timestamp="1650632568">helperCalculateAverageMetricTable.m</file>
+  </demoitem>
+  <demoitem>
+    <source>ComputeOdometryFromWheelEncoderTicksForDifferentialDriveExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex23704981</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>Create3DOccupancyMapAndInflatePointsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex24614910</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathBetweenTwoSE2StatesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex24913782</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1562697488">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>GenerateBenchmarkReportFor2DPathPlannersExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex25352815</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1606126296">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>PerformInformedSamplingWithMPNetExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex25468707</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>nnet</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateCopyOfPoseGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex25518626</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateCustomMotionPlanningNetworksExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex25704956</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>nnet</product>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathToCustomGoalRegionForMobileRobotsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex25714550</metadata>
+    <thumbnail>html/PlanPathToCustomGoalRegionForMobileRobotsExample_05.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1639495345">wareHouseMap.mat</file>
+    <file component="nav" timestamp="1658113277">helperFunctionPlotRobot.m</file>
+  </demoitem>
+  <demoitem>
+    <source>AvoidObstaclesUsingTEBLocalPlannerInSimulinkExample</source>
+    <type>model</type>
+    <extension>mlx</extension>
+    <metadata>ex25719642</metadata>
+    <thumbnail>data/TEBPath.gif</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>driving</product>
+    <file component="nav" timestamp="1738235234">offroadMap.mat</file>
+    <file component="nav" timestamp="1738235234">exampleHelperVehicleSpecs.m</file>
+    <file component="nav" timestamp="1738235234">exampleHelperProcessTEBErrorFlags.m</file>
+    <file component="nav" timestamp="1738235234">exampleHelperPlotVehicle.m</file>
+    <file component="nav" timestamp="1738235234">exampleHelperPlotMap.m</file>
+    <file component="nav" timestamp="1738235234">exampleHelperGlobalPlanning.m</file>
+    <file component="nav" timestamp="1738235234">exampleHelperBuildVehicleGraphic.m</file>
+    <file component="nav" timestamp="1738235234">exampleHelperCheckCollision.m</file>
+    <file component="nav" open="open" timestamp="1738322492">PathFollowingTEB.slx</file>
+    <file component="nav" timestamp="1738235234">TEBPath.gif</file>
+  </demoitem>
+  <demoitem>
+    <source>EstimateGravityDirectionPoseScaleFactorGraphOptimizationExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex26253867</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>QueryNavigationAndObservationMessagesFromRINEXFileExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex26687647</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>AnalyzeGPSSatelliteVisibilityExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex26906070</metadata>
+    <thumbnail>html/AnalyzeGPSSatelliteVisibilityExample_04.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1671102444">semalmanac_2021-6-22.al3</file>
+    <file component="nav" timestamp="1671102444">yumaalmanac_2021-6-22.alm</file>
+  </demoitem>
+  <demoitem>
+    <source>ExtractNMEAFieldsOfNMEASentenceExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex27333689</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ConnectPosesUsingReedsSheppConnectionPathExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex27452596</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>RetrievePoseHistoryFromEkfSLAMObjectExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex27647439</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>SampleSE2StateSpaceUsingUniformStateSamplerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex27716516</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ReadInformationFromGPSReceiverExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex28742310</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>PredictStateUsingMPNetTrainedOnMultipleEnvironmentsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex28800210</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>nnet</product>
+  </demoitem>
+  <demoitem>
+    <source>AddSimilarityTransformationFactorToFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex28816638</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateListenersUsingDependentMapLayersExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex28960285</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ConvertLocalCoordinatesInOccupancyMapToWorldCoordinatesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex29171460</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateNavGraphObjectWithStateAndLinkTablesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex29268417</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1668515993">navGraphData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ShortenPathIn3DOccupancyMapEnvironmentExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex29288398</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1707739150">dMapCityBlock.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>DefineCustomConnectedCostFunctionAndUserDataExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex29667684</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1731884590">exampleHelperShowGraphConnectionsOnPolyset.m</file>
+    <file component="nav" timestamp="1731406230">exampleHelperVisualizeConnectionGraphWeights.m</file>
+    <file component="nav" timestamp="1733761035">terrainConnectedCostFcn.m</file>
+    <file component="nav" timestamp="1738075439">exampleRectangleWithHolesPolyshape.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>PathFollowingWithObstacleAvoidanceInSimulinkExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex29911281</metadata>
+    <product>nav</product>
+    <product>ros</product>
+    <product>robotics</product>
+    <product>simulink</product>
+    <file component="nav" timestamp="1556729656">ExampleHelperSimulinkRobotROS.m</file>
+    <file component="nav" timestamp="1556729656">pathFollowingWithObstacleAvoidanceExample.slx</file>
+    <file component="nav" timestamp="1562697488">exampleMaps.mat</file>
+    <file component="nav" timestamp="1605904082">ExampleHelperRobotSimulator.m</file>
+    <file component="nav" timestamp="1605904082">ExampleHelperSimulationRateControl.m</file>
+    <file component="nav" timestamp="1605904082">ExampleHelperROSTimer.m</file>
+    <file component="nav" timestamp="1605904082">ExampleHelperSimDifferentialDriveRobot.m</file>
+    <file component="nav" timestamp="1605904082">ExampleHelperSimRangeSensor.m</file>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathBetweenTwoStatesInReedsSheppStateSpaceExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex30447751</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1562697488">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ExtractDataFromNMEASentencesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex30706343</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1594612964">nmeaLog.nmea</file>
+  </demoitem>
+  <demoitem>
+    <source>SampleStatesOfStateSpaceUsingGaussianDistributionExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex30752937</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>RemoveLoopClosuresFromPoseGraphInLidarSLAMObjectExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex30771530</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1555312816">offlineSlamData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateCopyOfTrajectoryOptimalFrenetObjectExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex31677128</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>RetrieveGraphFromProbabilisticRoadmapPathPlannerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex32311690</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1606126296">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateFactorCameraSE3AndPointXYZObjectAddToFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex32344496</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>PredictPosesBasedOnAnOdometryMotionModelExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex32877805</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>StoreAndModifyXYVelocitiesUsingASingleMapLayerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex33400323</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ModifyClassicalPlanningApproachForMPNetPlannerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex33546253</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>nnet</product>
+  </demoitem>
+  <demoitem>
+    <source>VehiclePathPlanningAndMetricsComputationExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex33806328</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>driving</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateCopiesOfMpnetSE2ObjectExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex34358005</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>nnet</product>
+  </demoitem>
+  <demoitem>
+    <source>AddFactorGPSObjectToFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex34414169</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>PrepareDataForTrainingMPNetExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex34812832</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>nnet</product>
+  </demoitem>
+  <demoitem>
+    <source>GetNodeStateCovarianceFromFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex36451525</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1720440615">exampleHelperPlot2DCovariance.m</file>
+  </demoitem>
+  <demoitem>
+    <source>PlotLidarScanAndRemoveInvalidPointsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex36755945</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateNavPathBasedOnMultipleWaypointsInSE3StateSpaceExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex36862497</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1592998592">dMapCityBlock.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateAndModifyCapsuleBasedObstaclesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex37001764</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CheckCollisionBetween3DMapAndCollisionGeometriesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex37340981</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>robotics</product>
+    <file component="nav" timestamp="1655892178">exampleHelperPlotCylinderAndSphere.m</file>
+  </demoitem>
+  <demoitem>
+    <source>Visualize3DOccupancyMapsWithVaryingSearchDepthsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex37664892</metadata>
+    <thumbnail>html/Visualize3DOccupancyMapsWithVaryingSearchDepthsExample_03.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>GetCurrentSatellitePositionsAndVelocitiesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex38076396</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ViewSatellitePositionsFromSEMAlmanacForReceiverPositionExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex39231936</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1649688736">semalmanac_2022-4-10.al3</file>
+  </demoitem>
+  <demoitem>
+    <source>OffroadPlanningOnDigitalElevationMapsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex41128460</metadata>
+    <thumbnail>html/OffroadPlanningOnDigitalElevationMapsExample_07.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1689971801">exampleHelperCreatePlannerObject.m</file>
+    <file component="nav" timestamp="1689971801">exampleHelperHybridAStarFcnOptions.m</file>
+    <dir component="nav" timestamp="1738076422">Analysis</dir>
+    <dir component="nav" timestamp="1738076422">Data</dir>
+    <dir component="nav" timestamp="1738076422">Heuristics</dir>
+    <dir component="nav" timestamp="1738076422">MapProcessing</dir>
+  </demoitem>
+  <demoitem>
+    <source>GenerateWheelTicksFromDifferentialDriveVehiclePoseExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex41237799</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathThrough3DOccupancyMapUsingRRTPlannerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex41645120</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1592998592">dMapCityBlock.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>EstimateRobotPoseWithScanMatchingExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex41835548</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1560713206">exampleHelperComposeTransform.m</file>
+    <file component="nav" timestamp="1565191297">lidarScans.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateCopyOfPlannerBenchmarkObjectExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex42836967</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1606126296">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ModifyConnectionTypesForDubinsPathExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex43019363</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>OptimizePlannedPathExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex43719605</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1562697488">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathThrough3DOccupancyMapUsingRRTStarPlannerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex43990927</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1592998592">dMapCityBlock.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>WriteCustomTransformFunctionsForMapLayersExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex44345474</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1608402593">exampleHelperIntLogoddsToProb.m</file>
+    <file component="nav" timestamp="1608402593">exampleHelperLogoddsToProb.m</file>
+    <file component="nav" timestamp="1608402593">exampleHelperProbToIntLogodds.m</file>
+    <file component="nav" timestamp="1608402593">exampleHelperProbToLogodds.m</file>
+  </demoitem>
+  <demoitem>
+    <source>PlanObstacleFreePathUsingProbabilisticRoadmapPathPlannerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex44376511</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1562697488">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>RetrieveSatellitePositionsVelocitiesAndIDFromYUMAAlmanacExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex44596900</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1664459640">yumaAlmanac_2022-9-27.alm</file>
+  </demoitem>
+  <demoitem>
+    <source>OptimizePoseGraphAndTrimLoopClosuresFor2DPoseGraphsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex45453256</metadata>
+    <thumbnail>html/OptimizePoseGraphAndTrimLoopClosuresFor2DPoseGraphsExample_05.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1594581073">grid-2d-posegraph.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>FindSuccessiveStateIndexesAndCostsInNavGraphObjectExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex45942743</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1668515993">navGraphData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>MatchLidarScansExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex45948710</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>OptimalTrajectoryPlanningInTheFrenetSpaceExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex46428431</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>Build3DEgoBodyPathsAndCheckForCollisionsWith3DObstaclesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex46450427</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ConvertLocalCoordinatesInOccupancyMapToGridIndicesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex46920700</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>Show2DFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex47681483</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1692789396">sineFactorGraph.g2o</file>
+  </demoitem>
+  <demoitem>
+    <source>SpecifyBoustrophedonOptionsForPolygonDecompositionExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex48576798</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1733760682">exampleHelperShowGraphConnectionsOnPolyset.m</file>
+    <file component="nav" timestamp="1738074442">exampleComplexPolyshape.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathThrough3DOccupancyMapBidirectionalRRTPlannerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex49002058</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1592998592">dMapCityBlock.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathThrough3DOccupancyMapProbabilisticRoadmapPlannerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex49386277</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1592998592">dMapCityBlock.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>AddFactorIMUBiasPriorObjectToFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex49621739</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ModifyConnectionTypesForReedsSheppPathExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex50128846</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>PlotTrajectoriesOfSatellitesOverTimeFromYUMAAlmanacFileExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex50253733</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1664459640">yumaAlmanac_2022-9-27.alm</file>
+  </demoitem>
+  <demoitem>
+    <source>SampleStateUsingUniformDistributionInSE3Example</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex50418604</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>InflateObstaclesInAnOccupancyGridExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex50689302</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CopyAnOccupancyGridMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex52951188</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>SampleSE2StateSpaceUsingPretrainedMPNetExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex53170324</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>nnet</product>
+  </demoitem>
+  <demoitem>
+    <source>RemoveNodeFromFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex53592212</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1695498558">fiveNodeFactorGraph.g2o</file>
+  </demoitem>
+  <demoitem>
+    <source>AddFactorVelocity3PriorObjectToFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex54157912</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>DefineDisconnectedCostFunctionExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex55218805</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1731408649">exampleHelperShowGraphConnectionsOnPolyset.m</file>
+    <file component="nav" timestamp="1733761595">longEdgeDisconnectedCostFcn.m</file>
+    <file component="nav" timestamp="1738074442">exampleComplexPolyshape.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ReadNavigationDataFromGalileoAlmanacFileExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex55286190</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1693819584">galAlmanac_2019-08-06.xml</file>
+  </demoitem>
+  <demoitem>
+    <source>GenerateAlternativeTrajectoriesForReferencePathExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex55502399</metadata>
+    <thumbnail>html/GenerateAlternativeTrajectoriesForReferencePathExample_02.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>GenerateGNSSPositionAndVelocityReadingsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex56254472</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>MoveLocalMapAndSyncWithWorldMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex56289593</metadata>
+    <thumbnail>html/MoveLocalMapAndSyncWithWorldMapExample_03.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1555327665">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>SetParticlesFromMonteCarloLocalizationAlgorithmExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex56387986</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1704907679">particleInfo.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ComputePathMetricsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex56887660</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1562241976">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ConvertPGMImageToMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex57101535</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1555409228">playpen_map.pgm</file>
+  </demoitem>
+  <demoitem>
+    <source>ObstacleAvoidanceWithTurtleBotAndVFHExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex57484766</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>ros</product>
+    <file component="nav" timestamp="1560709436">exampleHelperComputeAngularVelocity.m</file>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathBetweenTwoStatesUsingBidirectionalRRTExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex59902165</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1606126296">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateEgoCentricOccupancyMapUsingBinaryOccupancyMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex60308485</metadata>
+    <thumbnail>html/CreateEgoCentricOccupancyMapUsingBinaryOccupancyMapExample_03.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>driving</product>
+    <file component="nav" timestamp="1635943811">exampleHelperFilterObstacles.m</file>
+    <file component="nav" timestamp="1563288942">exampleHelperSetupVisualization.m</file>
+    <file component="nav" timestamp="1585991753">exampleHelperUpdateVisualization.m</file>
+    <file component="nav" timestamp="1563288942">exampleHelperCreateStraightRoadScenario.m</file>
+    <file component="nav" timestamp="1563288942">exampleHelperGetObstacleDataFromSensor.m</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateReferencePathWithMultipleIntersectionExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex61472296</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>VisualizePRMPlannerOutputUsingPredefinedPlotSpecExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex61534534</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>AddMultipleStatesAndAssociatedMetadataToGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex61899473</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1668515993">navGraphData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>OfflineSLAMExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex61919643</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1555312816">floorPlanWithTrajectory.png</file>
+    <file component="nav" timestamp="1555312816">mapWithOptimizedTrajectory.png</file>
+    <file component="nav" timestamp="1555312816">offlineSlamData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>GenerateNodeIDsBySpecifyingFactorTypeExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex62078399</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>RemoveLoopClosureEdgesFromPoseGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex62338653</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1560770536">intel-2d-posegraph.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateCopyOfLidarSLAMExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex62557972</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>BuildSignedDistanceMapFromPointCloudDataExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex62733851</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1720691036">L-Membrane.stl</file>
+    <file component="nav" timestamp="1720691036">LMembranePC.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ConvertGridIndicesInOccupancyMapToLocalCoordinatesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex63062060</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>BuildOccupancyMapFromLidarScansAndPosesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex63096891</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1560320702">scansAndPoses.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>IdentifyAndRemoveSpuriousLoopClosuresFromPoseGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex63104393</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1560770536">intel-2d-posegraph.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ExtractGPSAndQZSSDataFromYUMAAlmanacFileExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex63544694</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1673315978">qg2022309.alm</file>
+  </demoitem>
+  <demoitem>
+    <source>SampleSE2StateSpaceUsingGaussianStateSamplerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex64206082</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>RemoveFactorFromFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex64339559</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1695915352">fiveNodeFactorGraph.g2o</file>
+  </demoitem>
+  <demoitem>
+    <source>VisualizeRRTPlannerOutputUsingCustomPlotSpecExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex65305766</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>SelectStartAndGoalStatesUsing3DOccupancyMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex65570797</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1707739150">dMapCityBlock.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ReadNavigationAndObservationDataFromRINEXFileExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex65880199</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1673904683">ARHT00ATA_R_20211750000_01D_IN.rnx</file>
+    <file component="nav" timestamp="1673904683">ARHT00ATA_R_20211750000_01D_JN.rnx</file>
+    <file component="nav" timestamp="1673904683">GODS00USA_R_20211750000_01D_CN.rnx</file>
+    <file component="nav" timestamp="1673904683">GODS00USA_R_20211750000_01D_EN.rnx</file>
+    <file component="nav" timestamp="1673904683">GODS00USA_R_20211750000_01D_GN.rnx</file>
+    <file component="nav" timestamp="1673904683">GODS00USA_R_20211750000_01D_RN.rnx</file>
+    <file component="nav" timestamp="1673904683">GODS00USA_R_20211750000_01H_30S_MO.rnx</file>
+    <file component="nav" timestamp="1673904683">GOP600CZE_R_20211750000_01D_SN.rnx</file>
+  </demoitem>
+  <demoitem>
+    <source>PathPlanningAndMetricsComputationIn3DEnvironmentExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex65915705</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1592998592">dMapCityBlock.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>PerformSLAMUsing3DLidarPointCloudsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex66068048</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>vision</product>
+    <file component="nav" timestamp="1562850278">exampleHelperCreate2DScan.m</file>
+    <file component="nav" timestamp="1562850278">exampleHelperCreateSubmap.m</file>
+    <file component="nav" timestamp="1562850278">exampleHelperEstimateLoopCandidates.m</file>
+    <file component="nav" timestamp="1562850278">exampleHelperVisualizeMapAndPoseGraph.m</file>
+  </demoitem>
+  <demoitem>
+    <source>ComputeLossBetweenActualStatesAndPredictedStatesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex66554345</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>nnet</product>
+  </demoitem>
+  <demoitem>
+    <source>FuseMultipleLidarSensorsUsingMapLayersExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex66793575</metadata>
+    <thumbnail>html/FuseMultipleLidarSensorsUsingMapLayersExample_05.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1604004700">exampleHelperConstructMultiLayerEgoMap.m</file>
+    <file component="nav" timestamp="1604004700">exampleHelperCreateVehicleSensors.m</file>
+    <file component="nav" timestamp="1608153142">exampleHelperFuseOnGet.m</file>
+    <file component="nav" timestamp="1604004700">exampleHelperPopulateScene.m</file>
+    <file component="nav" timestamp="1604004700">exampleHelperResetSimulation.m</file>
+    <file component="nav" timestamp="1604004700">exampleHelperRunSimulation.m</file>
+    <file component="nav" timestamp="1604004700">exampleHelperSetupDisplay.m</file>
+    <file component="nav" timestamp="1604004700">exampleHelperShowEgoMap.m</file>
+    <file component="nav" timestamp="1604004700">exampleHelperUpdateEgoMap.m</file>
+    <file component="nav" timestamp="1604004700">exampleHelperUpdatePose.m</file>
+  </demoitem>
+  <demoitem>
+    <source>ResetStateAndStateEstimationErrorCovarianceEkfSLAMObjectExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex67062242</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>OptimizeSimpleFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex67094298</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ModifyGaussianStateSamplerAndCompareResultsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex67112523</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateCopyOfPlannerControlRRTObjectExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex67132804</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1606126296">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>VehicleCollisionCheckingUsingHybridAStarPathPlannerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex67280306</metadata>
+    <thumbnail>html/VehicleCollisionCheckingUsingHybridAStarPathPlannerExample_02.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1563188454">parkingLotCostVal.mat</file>
+    <file component="nav" timestamp="1655220333">exampleHelperVisualizePathWithVehicleModel.m</file>
+  </demoitem>
+  <demoitem>
+    <source>GetIndividualMapLayersFromMultilayerMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex67478321</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>EstimateSensorTransformToTransformPosesToCameraFrameExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex67769927</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>GetRayIntersectionPointsOnOccupancyMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex68026053</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>GetSatellitePseudoRangesForReceiverPositionAndVelocityExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex68188080</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>PlanOptimalPathBetweenTwoStatesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex68245698</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1562697488">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>VisualizeBiRRTPlannerOutputUsingDefaultPlotSpecExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex69039139</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>AddLinksBetweenTwoStatesInGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex69043777</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1707739473">navGraphData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>CalculatingBallRadiusConstantForPlannerRRStarExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex69123922</metadata>
+    <thumbnail>html/CalculatingBallRadiusConstantForPlannerRRStarExample_05.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1653579121">exampleHelperNBallVolume.m</file>
+    <file component="nav" timestamp="1606126296">exampleMaps.mat</file>
+    <file component="nav" timestamp="1653579121">exampleHelperPlotBallRadius.m</file>
+    <file component="nav" timestamp="1653579121">exampleHelperGenerateOfflineComparison.m</file>
+    <file component="nav" timestamp="1653579121">plannerComparison.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ReadDataFromGPSReceiverAsTimetableExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex69645773</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateCustomStateSpaceValidatorForPathPlanningExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex69934381</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CheckingFactorGraphConnectivityExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex70036699</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>FindIndexesOfStatesInNavGraphObjectExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex70045438</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1668515993">navGraphData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateAndModifyAnOccupancyMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex70367744</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>GetParticlesFromMonteCarloLocalizationAlgorithmExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex70892155</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>MarginalizeNodeInFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex71175452</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1732538055">exampleSimple3DFGStateData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>PerformLandmarkSLAMUsingExtendedKalmanFilterExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex72208729</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1628482307">racetrackDataset.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>PerformMotionPlanningUsingUniformSamplingExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex72225302</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ConvertGridIndicesInOccupancyMapToWorldCoordinatesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex72388503</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>SimulateInertialSensorReadingsFromADrivingScenarioExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex72502486</metadata>
+    <thumbnail>html/SimulateInertialSensorReadingsFromADrivingScenarioExample_05.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>driving</product>
+  </demoitem>
+  <demoitem>
+    <source>RetrieveSatellitePositionsVelocitiesAndIDsFromRINEXFileExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex72619860</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>GenerateTrajectoryFromReferencePathExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex72710745</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ViewSatellitePositionsFromYUMAAlmanacForReceiverPositionExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex74259395</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1673315978">qg2022309.alm</file>
+  </demoitem>
+  <demoitem>
+    <source>EKFBasedLandmarkSLAMExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex74283475</metadata>
+    <thumbnail>html/EKFBasedLandmarkSLAMExample_03.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1628477427">exampleHelperCovEllipsePoints.m</file>
+    <file component="nav" timestamp="1628477427">exampleHelperShowMap.m</file>
+    <file component="nav" timestamp="1628477427">exampleHelperUpdateRobotAndLandmarks.m</file>
+    <file component="nav" timestamp="1628477427">exampleHelperUpdateScans.m</file>
+    <file component="nav" timestamp="1628477427">exampleHelperVictoriaParkStateTransition.m</file>
+    <file component="nav" timestamp="1628477427">victoriaParkDataset.mat</file>
+    <file component="nav" timestamp="1628477427">exampleHelperInitializeVisualizationEKFSLAM.m</file>
+  </demoitem>
+  <demoitem>
+    <source>MinimizeSearchRangeInGridbasedLidarScanMatchingUsingIMUExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex75160122</metadata>
+    <thumbnail>html/MinimizeSearchRangeInGridbasedLidarScanMatchingUsingIMUExample_02.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1576861147">loggedLidarAndIMUData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>SelectStartAndGoalStatesUsing2DCostmapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex75200416</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1707737014">sampleMapData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>GenerateNodeIDsBySpecifyingNodeMatrixSizeExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex76598980</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>OptimalTrajectoryGenerationForUrbanDrivingExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex76634447</metadata>
+    <thumbnail>html/OptimalTrajectoryGenerationForUrbanDrivingExample_02.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>mpc</product>
+    <product>vdynblks</product>
+    <file component="nav" timestamp="1569474592">exampleHelperInitializeVisualization.m</file>
+    <file component="nav" timestamp="1563284377">exampleHelperPlayBackInDS.m</file>
+    <file component="nav" timestamp="1572500273">exampleHelperUpdateOccupancyMap.m</file>
+    <file component="nav" timestamp="1569474592">exampleHelperPlotUrbanScenario.m</file>
+    <file component="nav" timestamp="1565004097">urbanScenarioData.mat</file>
+    <file component="nav" timestamp="1569474592">exampleHelperExecuteAndVisualize.m</file>
+    <file component="nav" timestamp="1735899531">OptimalTrajectoryGenerationForUrbanDrivingExample.mlx</file>
+    <file component="nav" timestamp="1569474592">exampleHelperTransformPointtoPolygon.m</file>
+    <file component="nav" timestamp="1565190366">exampleHelperUrbanScenario.m</file>
+    <file component="nav" timestamp="1623083192">exampleHelperUrbanSetup.m</file>
+    <file component="nav" timestamp="1569474592">exampleHelperUrbanCleanUp.m</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateDeepCopyOfSE3StateSpaceObjectExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex76654738</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ViewSatellitePostionsFromGNSSSensorExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex77110580</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>PredictPoseAndVelocityOfIMUFactorExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex77449736</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>BuildEgoBodyPathsAndCheckCollisionsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex78374727</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>EstimatePoseOfScansWithLineFeaturesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex78578707</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1578334514">tb3_scanPair.mat</file>
+    <file component="nav" timestamp="1578334514">exampleHelperShowLineFeaturesInScan.m</file>
+  </demoitem>
+  <demoitem>
+    <source>GenerateRandomMazeMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex78653748</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>GetClosestPointsInSlidingWindowForIntersectionExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex78963288</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1679927181">closestPointExampleSetup.m</file>
+  </demoitem>
+  <demoitem>
+    <source>AddFactorTwoPoseSE2ObjectToFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex79282190</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>EnforceStateBoundsForSE3StatesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex79579015</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateAndExport3DOccupancyMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex79680723</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateClassForImplementingCustomStateSamplerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex79711466</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>RoutePlanningUsingNavGraphAndPlannerAStarExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex80153558</metadata>
+    <thumbnail>html/RoutePlanningUsingNavGraphAndPlannerAStarExample_03.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1673990624">exampleHelperOccupancyMatrixToGraphData.m</file>
+    <file component="nav" timestamp="1673990624">USGS_four_meter_x32y491_NH_Umbagog_2016.mat</file>
+    <file component="nav" timestamp="1673990624">exampleHelperExtractTrailBridge.m</file>
+    <file component="nav" timestamp="1673990624">exampleHelperPlotGraph.m</file>
+    <file component="nav" timestamp="1673990624">exampleHelperPlotPathStartGoal.m</file>
+  </demoitem>
+  <demoitem>
+    <source>CalculateDistanceBetweenTwoStatesInSE3Example</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex80182450</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>LocalizeTurtleBotUsingMonteCarloLocalizationExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex80506403</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>ros</product>
+    <file component="nav" timestamp="1560705295">ExampleHelperAMCLGazeboTruePose.m</file>
+    <file component="nav" timestamp="1560705295">ExampleHelperAMCLVisualization.m</file>
+    <file component="nav" timestamp="1560705295">ExampleHelperAMCLWanderer.m</file>
+    <file component="nav" timestamp="1560705295">officemap.mat</file>
+    <file component="nav" timestamp="1560709436">exampleHelperComputeAngularVelocity.m</file>
+  </demoitem>
+  <demoitem>
+    <source>ComputeHeadingFromXYPointsOfPathExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex80639501</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateCopyOfPlannerRRTObjectExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex82397722</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1606126296">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>IncrementallyOptimizeFactorGraphUsingSlidingWindowExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex82419424</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1679917637">exampleHelperPlotPositionsAndLandmarks.m</file>
+    <file component="nav" timestamp="1690543176">sensorData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>CheckOccupancyStatusGetOccupancyValuesIn3DOccupancyMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex82722769</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1616475645">citymap.ot</file>
+  </demoitem>
+  <demoitem>
+    <source>PredictStateSamplesUsingPretrainedMPNetExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex84394514</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>nnet</product>
+  </demoitem>
+  <demoitem>
+    <source>RetrieveAllLandmarkInformationFromEkfSLAMObjectExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex84525262</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>AddMeshesToMeshTSDFManagerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex84783172</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>SampleStateSpaceUsingMPNetAndPerformMotionPlanningExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex84862132</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>nnet</product>
+  </demoitem>
+  <demoitem>
+    <source>ComputeVelocityCmdsAndOptimalTrajUsingTEBAlgorithmExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex85279705</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1635165337">parkingMap.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>GetClosestPointsAtPathIntersectionExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex85325120</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ComposeASeriesOfLaserScansWithPoseChangesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex86260118</metadata>
+    <thumbnail>html/ComposeASeriesOfLaserScansWithPoseChangesExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>RemoveLandmarkFromEkfSLAMObjectExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex86342277</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ObtainRangeAndBearingReadingsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex86379891</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateAVectorFieldHistogramObjectExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex86943032</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>GenerateWheelTicksFromAckermannVehiclePoseExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex87028000</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ComputeStateSamplesUsingMPNetStateSamplerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex87244875</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>nnet</product>
+  </demoitem>
+  <demoitem>
+    <source>GetGridCellsAlongARayExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex87306941</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateCopyOfPlannerBiRRTObjectExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex87316883</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1606126296">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>RetrieveSatellitePositionsVelocitiesIDFromSEMAlmanacFileExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex87611146</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1649688736">semalmanac_2022-4-10.al3</file>
+  </demoitem>
+  <demoitem>
+    <source>GetNodeTypeOfNodeInFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex88065663</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>PlanKinodynamicPathWithControlsForMobileRobotExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex88256954</metadata>
+    <thumbnail>html/PlanKinodynamicPathWithControlsForMobileRobotExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1562697488">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateCopyOfPlannerPRMObjectExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex88983089</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1606126296">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>MotionPlanningInNarrowWarehousesUsingCustomSamplersExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex88985053</metadata>
+    <thumbnail>html/MotionPlanningInNarrowWarehousesUsingCustomSamplersExample_05.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1692279241">MotionPlanningInNarrowWarehousesUsingCustomSamplersExample.mlx</file>
+    <file component="nav" timestamp="1692279241">helperGenerateRandomStartGoals.m</file>
+    <file component="nav" timestamp="1692279241">helperStateSamplerHybrid.m</file>
+    <file component="nav" timestamp="1692279241">warehousePlan.PNG</file>
+    <file component="nav" timestamp="1692279241">helperSampleSelectedAreaOnMap.m</file>
+    <file component="nav" timestamp="1692279241">warehouseMapData.mat</file>
+    <file component="nav" timestamp="1692279241">GaussianPRM.mat</file>
+    <file component="nav" timestamp="1692279241">UniformPRM.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>PlotTrajectoriesOfSatellitesOverTimeFromSEMAlmanacFileExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex88997955</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1649688736">semalmanac_2022-4-10.al3</file>
+  </demoitem>
+  <demoitem>
+    <source>ValidatePathThroughOccupancyMapEnvironmentExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex89181887</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1562007209">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>PathPlanningUsingMPNetForAutomatedParkingValetSystemExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex89361331</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1721360989">helperGenerateParkingLotDataset.m</file>
+    <file component="nav" timestamp="1721360989">helperParkingLotMap.m</file>
+    <file component="nav" timestamp="1721360989">helperPlotEgoVehicle.m</file>
+    <file component="nav" timestamp="1721360989">helperSampleStartGoal.m</file>
+    <file component="nav" timestamp="1721360989">parkingScene.bmp</file>
+    <file component="nav" timestamp="1721360989">parkinglotTrainedMPNET.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>AddNodesToGroupsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex89438983</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ConvertWorldCoordinatesInOccupancyMapToLocalCoordinatesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex89518184</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>RemoveStatesFromGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex89620540</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1668515993">navGraphData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>SelectStartAndGoalStatesUsing2DOccupancyMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex90068229</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1707739204">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>CreateCopiesOfUniformStateSamplerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex90363048</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ComputeOrientationFromRecordedIMUDataBlockExample</source>
+    <type>M-file</type>
+    <extension>m</extension>
+    <metadata>ex90901354</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>simulink</product>
+    <file component="nav" timestamp="1700211199">ComputeOrientationFromIMUData.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>GenerateCodeForPathPlanningUsingHybridAStarExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex90966796</metadata>
+    <thumbnail>html/GenerateCodeForPathPlanningUsingHybridAStarExample_02.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>matlabcoder</product>
+    <file component="nav" timestamp="1655200469">codegenPathPlanner.m</file>
+  </demoitem>
+  <demoitem>
+    <source>EstimateReceiverPositionFromPseudorangesAndSatellitePosExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex91082359</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ObstacleFreePathPlanningInGridMapUsingAStarPathPlannerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex91211745</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CombineTwoKinodynamicPathsWithControlsForMobileRobotExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex91406791</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1606126296">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>EstimateGravityDirectionUsingFactorGraphOptimizationExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex91571540</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateSignedDistanceMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex91659184</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1606126296">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>GNSSSimulationOverviewExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex91809638</metadata>
+    <thumbnail>html/GNSSSimulationOverviewExample_07.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>AddFactorPoseSE3PriorObjectToFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex91889929</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>PlotLocationGNSSReceiverLiveNMEADataOrLogFileExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex92079357</metadata>
+    <thumbnail>html/PlotLocationGNSSReceiverLiveNMEADataOrLogFileExample_02.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1610356758">gpsLog.txt</file>
+    <file component="nav" timestamp="1610356758">gpsLog2.txt</file>
+  </demoitem>
+  <demoitem>
+    <source>SpecifyIMUParamsOfFactorIMUUsingFactorIMUParametersExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex92481954</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>TrainMPNetOnCustomDataForMotionPlanningExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex92586649</metadata>
+    <thumbnail>html/TrainMPNetOnCustomDataForMotionPlanningExample_04.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>nnet</product>
+  </demoitem>
+  <demoitem>
+    <source>ValidatePathThroughVehicleCostmapEnvironmentExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex93716658</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>driving</product>
+    <file component="nav" timestamp="1562007209">exampleMaps.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>EstimateRobotPoseFromRangeSensorDataExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex94178670</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>AddStateToGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex94257719</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1704986177">navGraphStates.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathBetweenTwoStatesUsingMPNetPathPlannerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex94338696</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>nnet</product>
+  </demoitem>
+  <demoitem>
+    <source>OptimizeA3DPoseGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex94642584</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1560935220">parking-garage-posegraph.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>ComputeOdometryFromWheelEncoderTicksForAckermannVehicleExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex94720802</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CheckIfNodeExistsInFactorGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex95048803</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>CreateCustomStateSpaceSamplerForPathPlanningExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex95146919</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>RemoveLinksBetweenStatesInGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex95331012</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1668515993">navGraphData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>GenerateRandomlyDistributedObstacleMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex95484517</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>GenerateWheelTicksFromUnicycleVehiclePoseExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex95650846</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>RetrieveVelocityFromTimeSeriesOfVelocityCommandsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex95792142</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>TrainMPNetOnSingleMapEnvironmentExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex96052488</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>nnet</product>
+    <file component="nav" timestamp="1690130078">singleTrainData.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>MovingFurnitureInAClutteredRoomWithRRTExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex96442922</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1562632808">ExampleHelperFurniture.m</file>
+    <file component="nav" timestamp="1696962640">ExampleHelperFurnitureInRoomValidator.m</file>
+    <file component="nav" timestamp="1562632808">ExampleHelperRoom.m</file>
+    <file component="nav" timestamp="1561073498">exampleHelperGoalFunc.m</file>
+    <file component="nav" timestamp="1705431705">exampleHelperSmoothPath.m</file>
+    <file component="nav" timestamp="1562956486">exampleHelperShowFurnitureTrace.m</file>
+  </demoitem>
+  <demoitem>
+    <source>DynamicReplanningOnAnIndoorMapExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex97080106</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1556726569">HelperUtils.m</file>
+  </demoitem>
+  <demoitem>
+    <source>PlanShortestPathInGraphUsingAStarPathPlannerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex97193247</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1668513594">queenslandRoutes.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>AddLandmarkPointNodeToPoseGraphExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex97232397</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathInDubinsStateSpaceUsingMPNetPathPlannerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex97854481</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <product>nnet</product>
+  </demoitem>
+  <demoitem>
+    <source>ShowNoiseDistributionEffectsForOdometryMotionModelExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex97858342</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>MatchScansUsingGridBasedSearchExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex98238618</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1559799391">laserScans.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>GetNodeTypeOfNodeSpecifiedBySingleNodeFactorExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex98243410</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>ExtractDataRMBSentenceUsingCustomSentenceExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex98463222</metadata>
+    <thumbnail>html/ExtractDataRMBSentenceUsingCustomSentenceExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1625194238">parserRMB.m</file>
+  </demoitem>
+  <demoitem>
+    <source>EstimatePositionUsingLandmarkFactorsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex98623805</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1704980998">exampleHelperSimpleFourPoseGraph.m</file>
+    <file component="nav" timestamp="1704980998">exampleHelperPlotGroundTruth.m</file>
+  </demoitem>
+  <demoitem>
+    <source>ConvertWorldCoordinatesInOccupancyMapToGridIndicesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex98626156</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+  </demoitem>
+  <demoitem>
+    <source>PlanPathBetweenTwoStatesExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex99995320</metadata>
+    <product>matlab</product>
+    <product>nav</product>
+    <file component="nav" timestamp="1562697488">exampleMaps.mat</file>
+  </demoitem>
+</demos>
