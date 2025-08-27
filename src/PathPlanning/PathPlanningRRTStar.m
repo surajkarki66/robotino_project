@@ -1,13 +1,10 @@
-%% ============================
-%  Dubins Path with Nodes & Stations
-% ============================
-clear; clc; close all;
-
-% --- Load Occupancy Map ---
+% Load Occupancy Map
 load('IOTFactoryOccupancyGridMap.mat', 'map');
+
+% Set origin for the map
 map.GridLocationInWorld = [-39.975, -39.975];
 
-% --- Define Nodes ---
+% Define Nodes
 coords_nodes = [
 -15.2618,  0.852601 %12
 -14.215,   0.83 %11
@@ -26,7 +23,7 @@ coords_nodes = [
 -0.161829, 1.52521 %14
 ];
 
-% --- Define Stations ---
+% Define Stations 
 coords_stations = [
 -15.39,   2.552
 -15.752,  5.251
@@ -82,7 +79,7 @@ stateValidator.Map = inflatedMap;
 stateValidator.ValidationDistance = 0.05;
 
 % --- Planner ---
-planner = plannerRRT(ss, stateValidator);
+planner = plannerRRTStar(ss, stateValidator);
 planner.MaxConnectionDistance = 2.5;
 planner.MaxIterations = 30000;
 planner.GoalReachedFcn = @exampleHelperCheckIfGoal;
