@@ -11,12 +11,8 @@ Tutorials:
 - https://www.mathworks.com/help/nav/ref/slammapbuilder-app.html
 - https://www.mathworks.com/help/lidar/ug/build-map-from-2d-lidar-scans-using-slam.html
 
-SLAM in Python:
-- https://github.com/Btzel/simultaneous-localization-and-mapping
 
 SLAM Implementation with Odometry:
-- https://github.com/YoloPopo/SLAM-Scan-Matching
+- https://github.com/YoloPopo/SLAM-Scan-Matching - First try this
 - https://github.com/xiaofeng419/SLAM-2D-LIDAR-SCAN
 
-SLAM Implementation with IMU:
-- https://github.com/jan-xu/2d-slam
