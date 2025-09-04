@@ -1,5 +1,5 @@
 %% Load Occupancy Map
-load('IOTFactoryOccupancyGridMap.mat', 'map');
+load('../../data/maps/IOT.mat', 'map');
 
 % Set origin for the map (world frame offset)
 map.GridLocationInWorld = [-39.975, -39.975];

@@ -1,5 +1,5 @@
 % Load Occupancy Map
-load('IOTFactoryOccupancyGridMap.mat', 'map');
+load('../../data/maps/IOT.mat', 'map');
 
 % Set origin for the map
 map.GridLocationInWorld = [-39.975, -39.975];
@@ -82,7 +82,7 @@ stateValidator.ValidationDistance = 0.05;
 planner = plannerRRTStar(ss, stateValidator);
 planner.MaxConnectionDistance = 2.5;
 planner.MaxIterations = 30000;
-planner.GoalReachedFcn = @exampleHelperCheckIfGoal;
+planner.GoalReachedFcn = @HelperCheckIfGoal;
 
 % --- Plan Path ---
 rng default;

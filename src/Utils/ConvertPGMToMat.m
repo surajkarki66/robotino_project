@@ -1,6 +1,6 @@
 % Convert PGM Image to .mat 
 % Convert a portable graymap (PGM) file containing a  map into an occupancyMap for use in MATLAB®.
-image = imread('./iot.pgm');
+image = imread('../../data/maps/iot.pgm');
 imshow(image)
 
 % PGM values are expressed from 0 to 255 as uint8. Normalize these values by converting the cropped image to double and dividing each cell by 255.
@@ -17,4 +17,4 @@ map.GridLocationInWorld = [-39.975, -39.975];
 show(map)
 
 % Saving map in .mat format
-save('./IOTFactoryOccupancyGridMap.mat', 'map');
+save('../../data/maps/IOT.mat', 'map');
