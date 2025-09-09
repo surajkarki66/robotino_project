@@ -1,29 +1,38 @@
-% Load Occupancy Map
-load('../../data/maps/IOT.mat', 'map');
-
-% Set origin for the map
+%% Load Occupancy Map
+load('../../data/maps/IOT.mat','map');
 map.GridLocationInWorld = [-39.975, -39.975];
 
-% Define Nodes
-coords_nodes = [
--15.2618,  0.852601 %12
--14.215,   0.83 %11
--13.1368,  2.67684 %1
--10.7464,  2.74653 %2
--8.33197,  2.72984 %3
--7.64,     1.329 %4
--6.83323, -1.7505 %7
--5.616,   -0.951 %10
--5.5545,  -3.00751 %8
--4.33607, -1.82372 %9
--2.59474,  0.314477 %5
--1.747,   -1.418 %6
--0.50355, -0.949287 %15
--0.276,    0.067 %13
--0.161829, 1.52521 %14
+%% Define Docking Nodes
+coords_docking = [
+    -13.1368,  2.67684
+    -10.7464,  2.74653
+    -8.33197,  2.72984
+    -7.64,     1.329
+    -6.83323, -1.7505
+    -5.616,   -0.951
+    -5.5545,  -3.00751
+    -4.33607, -1.82372
+    -2.59474,  0.314477
+    -1.747,   -1.418
 ];
 
-% Define Stations 
+%% Define Parking Nodes
+coords_parking = [
+    -15.2618,  0.852601
+    -14.215,   0.83
+    -0.50355, -0.949287
+    -0.276,    0.067
+    -0.161829, 1.52521
+];
+
+%% Combine nodes for planning
+coords_nodes = [coords_docking; coords_parking];
+numNodes = size(coords_nodes,1);
+
+%% Keep track of parking indices
+parkingIdx = (size(coords_docking,1)+1):numNodes;
+
+%% Define Stations
 coords_stations = [
 -15.39,   2.552
 -15.752,  5.251
@@ -39,77 +48,100 @@ coords_stations = [
 -12.313,  4.249
 ];
 
-% --- First Figure: Map with nodes & stations ---
-figure;
-show(map);
-hold on;
-plot(coords_nodes(:,1), coords_nodes(:,2), 'go', ...
-    'MarkerSize', 6, 'LineWidth', 1.5, 'MarkerFaceColor', 'g');
-plot(coords_stations(:,1), coords_stations(:,2), 'yo', ...
-    'MarkerSize', 6, 'LineWidth', 1.5, 'MarkerFaceColor', 'y');
-legend('Nodes (Green)', 'Stations (Yellow)');
+%% Plot map with nodes and stations
+figure; show(map); hold on; axis equal;
+plot(coords_nodes(:,1), coords_nodes(:,2), 'ko', 'MarkerFaceColor','g');
+plot(coords_stations(:,1), coords_stations(:,2), 'yo', 'MarkerFaceColor','y');
+title('IoT Factory Map with Nodes and Stations');
 
-% --- Start and Goal ---
-start = [-2.47543, -3.5765, pi];
-goal = [-13.1368, 2.67684, pi/2];
+%% Use original map for planning (no inflation)
+plannerMap = map;
 
-% Show start and goal positions of robot
-plot(start(1), start(2), 'ro', 'MarkerFaceColor', 'r');
-plot(goal(1), goal(2), 'mo', 'MarkerFaceColor', 'm');
+%% Create 2D RRT* state space & validator
+bounds = [plannerMap.XWorldLimits; plannerMap.YWorldLimits; [-pi pi]];
+ss = stateSpaceSE2(bounds);
 
-% Show heading lines
-r = 0.5;
-plot([start(1), start(1) + r*cos(start(3))], ...
-     [start(2), start(2) + r*sin(start(3))], 'r-');
-plot([goal(1), goal(1) + r*cos(goal(3))], ...
-     [goal(2), goal(2) + r*sin(goal(3))], 'm-');
-
-% --- Inflate the map for planning ---
-inflatedMap = copy(map);
-inflate(inflatedMap, 0.1);
-
-% --- State Space ---
-bounds = [inflatedMap.XWorldLimits; inflatedMap.YWorldLimits; [-pi pi]];
-ss = stateSpaceDubins(bounds);
-ss.MinTurningRadius = 0.4;
-
-% --- Validator ---
 stateValidator = validatorOccupancyMap(ss);
-stateValidator.Map = inflatedMap;
+stateValidator.Map = plannerMap;
 stateValidator.ValidationDistance = 0.05;
 
-% --- Planner ---
+%% Planner (RRT*)
 planner = plannerRRTStar(ss, stateValidator);
-planner.MaxConnectionDistance = 2.5;
-planner.MaxIterations = 30000;
-planner.GoalReachedFcn = @HelperCheckIfGoal;
+planner.MaxConnectionDistance = 3.0;
+planner.MaxIterations = 10000;
 
-% --- Plan Path ---
-rng default;
-[pthObj, solnInfo] = plan(planner, start, goal);
+%% Build adjacency matrix & store paths
+adjMatrix = inf(numNodes);
+paths = cell(numNodes);
+maxEdgeDist = 4.0;  % only connect nearby nodes
 
-% --- Shorten Path ---
-shortenedPath = shortenpath(pthObj, stateValidator);
+for i = 1:numNodes
+    for j = i+1:numNodes
+        % Skip connections between parking nodes
+        if ismember(i, parkingIdx) && ismember(j, parkingIdx)
+            continue;
+        end
+        
+        if norm(coords_nodes(i,:) - coords_nodes(j,:)) <= maxEdgeDist
+            startSE2 = [coords_nodes(i,:), 0];
+            goalSE2  = [coords_nodes(j,:), 0];
 
-% --- Path Lengths ---
-originalLength = pathLength(pthObj);
-shortenedLength = pathLength(shortenedPath);
+            if isStateValid(stateValidator, startSE2) && isStateValid(stateValidator, goalSE2)
+                try
+                    [pthObj, solnInfo] = plan(planner, startSE2, goalSE2);
+                    if solnInfo.IsPathFound
+                        shortenedPath = shortenpath(pthObj, stateValidator);
+                        cost = pathLength(shortenedPath);
+                        adjMatrix(i,j) = cost;
+                        adjMatrix(j,i) = cost;
+                        paths{i,j} = shortenedPath.States(:,1:2); % x,y only
+                        paths{j,i} = flipud(shortenedPath.States(:,1:2));
+                    end
+                catch
+                    fprintf('No path between node %d and %d\n', i,j);
+                end
+            end
+        end
+    end
+end
 
-% --- Second Figure: Path with nodes & stations ---
-figure;
-show(map);
-hold on;
-plot(coords_nodes(:,1), coords_nodes(:,2), 'go', ...
-    'MarkerSize', 6, 'LineWidth', 1.5, 'MarkerFaceColor', 'g');
-plot(coords_stations(:,1), coords_stations(:,2), 'yo', ...
-    'MarkerSize', 6, 'LineWidth', 1.5, 'MarkerFaceColor', 'y');
+%% Build MATLAB graph
+G = graph(adjMatrix);
 
-% Plot shortened path
-plot(shortenedPath.States(:,1), shortenedPath.States(:,2), ...
-    'g-', 'LineWidth', 3);
+%% Plot obstacle-free navigation graph with green paths & turning points
+figure; show(map); hold on; axis equal;
+plot(coords_nodes(:,1), coords_nodes(:,2), 'ko', 'MarkerFaceColor','g');
+plot(coords_stations(:,1), coords_stations(:,2), 'yo', 'MarkerFaceColor','y');
 
-% Show start and goal
-plot(start(1), start(2), 'ro', 'MarkerFaceColor', 'r');
-plot(goal(1), goal(2), 'mo', 'MarkerFaceColor', 'm');
+turnThreshold = cosd(10); % turning points > 10 degrees
 
-legend('Nodes (Green)', 'Stations (Yellow)', 'Shortened Path', 'Start', 'Goal');
+for e = 1:numedges(G)
+    [s,t] = findedge(G,e);
+    if ~isempty(paths{s,t})
+        path = paths{s,t};
+
+        % Plot path in green
+        plot(path(:,1), path(:,2), 'g-', 'LineWidth',1.5);
+
+        % Detect significant turning points
+        turningPts = [];
+        for k = 2:size(path,1)-1
+            v1 = path(k,:) - path(k-1,:);
+            v2 = path(k+1,:) - path(k,:);
+            if norm(v1) > 0 && norm(v2) > 0
+                cosTheta = dot(v1,v2)/(norm(v1)*norm(v2));
+                if cosTheta < turnThreshold
+                    turningPts = [turningPts; path(k,:)];
+                end
+            end
+        end
+
+        % Plot turning points as green circles
+        if ~isempty(turningPts)
+            plot(turningPts(:,1), turningPts(:,2), 'go', 'MarkerFaceColor','g', 'MarkerSize',6);
+        end
+    end
+end
+
+title('Obstacle-Free Navigation Graph');
+legend('Nodes','Stations','Graph edges');

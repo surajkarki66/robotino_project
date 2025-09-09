@@ -1,0 +1,6 @@
+image: localization-map.pgm
+resolution: 0.050000000000000003
+origin: [-12.206, -13.810, 0]
+negate: 0
+occupied_thresh: 0.64998137950897217
+free_thresh: 0.20001527667045593

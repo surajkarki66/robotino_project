@@ -1,29 +1,33 @@
 %% Load Occupancy Map
-load('../../data/maps/IOT.mat', 'map');
-
-% Set origin for the map (world frame offset)
+load('../../data/maps/IOT.mat','map');
 map.GridLocationInWorld = [-39.975, -39.975];
 
-%% Define Nodes
-coords_nodes = [
--15.2618,  0.852601 %12
--14.215,   0.83     %11
--13.1368,  2.67684  %1
--10.7464,  2.74653  %2
--8.33197,  2.72984  %3
--7.64,     1.329    %4
--6.83323, -1.7505   %7
--5.616,   -0.951    %10
--5.5545,  -3.00751  %8
--4.33607, -1.82372  %9
--2.59474,  0.314477 %5
--1.747,   -1.418    %6
--0.50355, -0.949287 %15
--0.276,    0.067    %13
--0.161829, 1.52521  %14
+%% Define Docking Points and Parking Points
+coords_docking_pts = [
+    -13.1368,  2.67684
+    -10.7464,  2.74653
+    -8.33197,  2.72984
+    -7.64,     1.329
+    -6.83323, -1.7505
+    -5.616,   -0.951
+    -5.5545,  -3.00751
+    -4.33607, -1.82372
+    -2.59474,  0.314477
+    -1.747,   -1.418
 ];
 
-%% Define Stations 
+coords_parking_pts = [
+    -15.2618,  0.852601
+    -14.215,   0.83
+    -0.50355, -0.949287
+    -0.276,    0.067
+    -0.161829, 1.52521
+];
+
+coords_nodes = [coords_docking_pts; coords_parking_pts];
+numNodes = size(coords_nodes,1);
+
+%% Define Stations
 coords_stations = [
 -15.39,   2.552
 -15.752,  5.251
@@ -39,59 +43,65 @@ coords_stations = [
 -12.313,  4.249
 ];
 
-%% First Figure: Map with nodes & stations (world frame)
-figure;
-show(map); hold on; axis equal;
-plot(coords_nodes(:,1),    coords_nodes(:,2),    'go', 'MarkerSize', 6, 'LineWidth', 1.5, 'MarkerFaceColor', 'g');
-plot(coords_stations(:,1), coords_stations(:,2), 'yo', 'MarkerSize', 6, 'LineWidth', 1.5, 'MarkerFaceColor', 'y');
-legend('Nodes (Green)', 'Stations (Yellow)');
+%% Plot map with nodes and stations
+figure; show(map); hold on; axis equal;
+plot(coords_nodes(:,1), coords_nodes(:,2), 'ko','MarkerFaceColor','g');
+plot(coords_stations(:,1), coords_stations(:,2), 'yo','MarkerFaceColor','y');
+title('IoT Factory Map with Nodes and Stations');
 
-%% Start and Goal in WORLD coordinates (x,y)
-startWorld = [-2.47543, -3.5765];
-goalWorld  = [-13.1368,   2.67684];
-
-% Plot start/goal
-plot(startWorld(1), startWorld(2), 'ro', 'MarkerFaceColor', 'r');
-plot(goalWorld(1),  goalWorld(2),  'mo', 'MarkerFaceColor', 'm');
-
-%% Inflate the map for planning
+%% Inflate Map for Planning
 inflatedMap = copy(map);
-inflate(inflatedMap, 0.1);
+inflate(inflatedMap, 0.3);  % 0.3 meters safety clearance
 
-%% Planner (A* Grid)
+%% Create A* Planner
 planner = plannerAStarGrid(inflatedMap);
 
-%% Convert world -> grid (expects integer grid indices)
-startGrid = world2grid(inflatedMap, startWorld);  % [row col]
-goalGrid  = world2grid(inflatedMap, goalWorld);   % [row col]
+%% Build adjacency matrix for nearby obstacle-free paths
+adjMatrix = inf(numNodes);
+paths = cell(numNodes);
 
-%% Plan path in GRID frame
-rng default;
-[pathGrid, solnInfo] = plan(planner, startGrid, goalGrid);  % pathGrid is N×2 [row col]
+maxEdgeDist = 4.0;  % only connect nearby nodes
 
-% Optional: check success
-if isempty(pathGrid)
-    error('A* could not find a path. Check start/goal are in free space and inflation radius.');
+for i = 1:numNodes
+    for j = i+1:numNodes
+        % Skip connections between parking nodes
+        if ismember(i, (length(coords_docking_pts)+1):numNodes) && ...
+           ismember(j, (length(coords_docking_pts)+1):numNodes)
+            continue;
+        end
+        
+        if norm(coords_nodes(i,:) - coords_nodes(j,:)) <= maxEdgeDist
+            startGrid = world2grid(inflatedMap, coords_nodes(i,:));
+            goalGrid  = world2grid(inflatedMap, coords_nodes(j,:));
+            [pathGrid, ~] = plan(planner, startGrid, goalGrid);
+
+            if ~isempty(pathGrid)  % path exists
+                pathWorld = grid2world(inflatedMap, pathGrid);
+                cost = sum(vecnorm(diff(pathWorld,1,1),2,2));
+                adjMatrix(i,j) = cost;
+                adjMatrix(j,i) = cost;
+                paths{i,j} = pathWorld;
+                paths{j,i} = flipud(pathWorld);
+            end
+        end
+    end
 end
 
-%% Convert GRID path -> WORLD path for plotting
-pathWorld = grid2world(inflatedMap, pathGrid);   % N×2 [x y]
+%% Build MATLAB Graph
+G = graph(adjMatrix);
 
-%% Compute path length in world units
-pathLengthVal = sum(vecnorm(diff(pathWorld,1,1), 2, 2));
-fprintf('Path Length = %.3f (world units)\n', pathLengthVal);
+%% Plot paths 
+figure; show(map); hold on; axis equal;
+plot(coords_nodes(:,1), coords_nodes(:,2), 'ko','MarkerFaceColor','g');
+plot(coords_stations(:,1), coords_stations(:,2), 'yo','MarkerFaceColor','y');
 
-%% Second Figure: Map with nodes, stations, and A* path
-figure;
-show(map); hold on; axis equal;
-plot(coords_nodes(:,1),    coords_nodes(:,2),    'go', 'MarkerSize', 6, 'LineWidth', 1.5, 'MarkerFaceColor', 'g');
-plot(coords_stations(:,1), coords_stations(:,2), 'yo', 'MarkerSize', 6, 'LineWidth', 1.5, 'MarkerFaceColor', 'y');
+for e = 1:numedges(G)
+    [s,t] = findedge(G,e);
+    if ~isempty(paths{s,t})
+        path = paths{s,t};
+        plot(path(:,1), path(:,2), 'g-', 'LineWidth',1.5);
+    end
+end
 
-% Plot path (world frame)
-plot(pathWorld(:,1), pathWorld(:,2), 'g-', 'LineWidth', 3);
-
-% Start/goal markers
-plot(startWorld(1), startWorld(2), 'ro', 'MarkerFaceColor', 'r');
-plot(goalWorld(1),  goalWorld(2),  'mo', 'MarkerFaceColor', 'm');
-
-legend('Nodes (Green)', 'Stations (Yellow)', 'A* Path', 'Start', 'Goal');
+title('Obstacle-Free Navigation Graph');
+legend('Nodes','Stations','Graph edges');

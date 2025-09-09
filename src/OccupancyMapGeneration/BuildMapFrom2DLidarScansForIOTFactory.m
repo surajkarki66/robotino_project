@@ -1,142 +1,134 @@
 %% CSV to Scans
 
-% Load CSV
-% CSV columns: distance | angle (in radians) | scan_index (0-based)
 data = readmatrix('../../data/lidar_data/sample_data/scans_clean.csv');  
-
 distances = data(:,1);
 angles    = data(:,2);
 scan_idx  = data(:,4);
 
-% Get unique scan indices
 unique_scans = unique(scan_idx);
 numScans = numel(unique_scans);
+disp(['Total scans: ', num2str(numScans)])
 
-disp(numScans)
-
-% Preallocate cell array for scans
 iotScans = cell(1, numScans);
-
-% Loop over each scan
 for k = 1:numScans
-    idx = scan_idx == unique_scans(k);  % points belonging to this scan
+    idx = scan_idx == unique_scans(k);
     ranges = distances(idx);
     angs   = angles(idx);
-    
-    % Create lidarScan object
     iotScans{k} = lidarScan(ranges, angs);
 end
 
-%% Display info
-disp(['Total scans: ', num2str(numScans)]);
-disp(iotScans{1});  % example: first scan
-
-% Create a lidarSLAM object and set the map resolution and the max lidar range.
-
-maxLidarRange = 8; %smaller than 10 meters
-mapResolution = 20; % Set the max lidar range slightly smaller than the max scan range (8m), as the laser readings are less accurate near max range. Set the grid map resolution to 20 cells per meter, which gives a 5cm precision.
+%% SLAM setup
+maxLidarRange = 8; 
+mapResolution = 20; 
 slamAlg = lidarSLAM(mapResolution, maxLidarRange);
-
-% The following loop closure parameters are set empirically.
-% Using higher loop closure threshold helps reject false positives in loop closure identification process.
-% However, keep in mind that a high-score match may still be a bad match. 
-% For example, scans collected in an environment that has similar or repeated features are more
-% likely to produce false positives. Using a higher loop closure search radius allows the algorithm
-% to search a wider range of the map around current pose estimate for loop closures.
-
 slamAlg.LoopClosureThreshold = 210;  
 slamAlg.LoopClosureSearchRadius = 8;
 
-% Incrementally add scans to the slamAlg object. Scan numbers are printed if added to the map.
-% The object rejects scans if the distance between scans is too small.
-% Add the first 10 scans first to test your algorithm.
-for i=1:10
-    [isScanAccepted, loopClosureInfo, optimizationInfo] = addScan(slamAlg, iotScans{i});
-    if isScanAccepted
-        fprintf('Added scan %d \n', i);
-    end
-end
-
-% Reconstruct the scene by plotting the scans and poses tracked by the slamAlg.
-figure;
-show(slamAlg);
-title({'Map of the Environment','Pose Graph for Initial 10 Scans'});
-
-% Observe the Effect of Loop Closures and the Optimization Process
-% Continue to add scans in a loop. Loop closures should be automatically detected as the robot moves.
-% Pose graph optimization is performed whenever a loop closure is identified.
-% The output optimizationInfo has a field, IsPerformed, that indicates when pose graph optimization occurs.
-
+%% GIF setup
+gifFile = '../../data/maps/localization-map.gif';
+delayTime = 0.3;
+hFig = figure('Position', [100 100 800 800]);
 firstTimeLCDetected = false;
 
-figure;
-for i=10:length(iotScans)
-    [isScanAccepted, loopClosureInfo, optimizationInfo] = addScan(slamAlg, iotScans{i});
-    if isScanAccepted
-        fprintf('Added scan %d \n', i);
+%% Add scans and build GIF with robot path
+for i = 1:length(iotScans)
+    [isScanAccepted, ~, optimizationInfo] = addScan(slamAlg, iotScans{i});
+    if ~isScanAccepted, continue; end
+    fprintf('Added scan %d\n', i);
+    
+    % Build current occupancy map
+    [scansNow, posesNow] = scansAndPoses(slamAlg);
+    mapNow = buildMap(scansNow, posesNow, mapResolution, maxLidarRange);
+    occNow = occupancyMatrix(mapNow);
+
+    % Create PGM-style image
+    occupied_thresh = mapNow.OccupiedThreshold;
+    free_thresh = mapNow.FreeThreshold;
+    imgNow = uint8(127 * ones(size(occNow)));
+    imgNow(occNow >= occupied_thresh) = 0;
+    imgNow(occNow <= free_thresh) = 255;
+    
+    % Display map
+    imagesc(imgNow);
+    colormap(gray);
+    axis equal tight;
+    hold on;
+    
+    % Plot robot trajectory
+    if ~isempty(posesNow)
+        xPos = posesNow(:,1);
+        yPos = posesNow(:,2);
+        % Convert world coordinates to image coordinates
+        [rows, cols] = size(imgNow);
+        xImg = round((xPos - mapNow.GridLocationInWorld(1)) / (1/mapResolution));
+        yImg = round((yPos - mapNow.GridLocationInWorld(2)) / (1/mapResolution));
+        yImg = rows - yImg; % invert y to match image coordinates
+        plot(xImg, yImg, 'r-', 'LineWidth', 2);
+        plot(xImg(end), yImg(end), 'ro', 'MarkerFaceColor','r'); % current robot
     end
-    if ~isScanAccepted
-        continue;
+    
+    title(['Map + Robot Path: Scan ', num2str(i)]);
+    hold off;
+    drawnow;
+    
+    % Capture GIF frame
+    frame = getframe(hFig);
+    im = frame2im(frame);
+    [imInd, cm] = rgb2ind(im, 256);
+    if i == 1
+        imwrite(imInd, cm, gifFile, 'gif', 'LoopCount', Inf, 'DelayTime', delayTime);
+    else
+        imwrite(imInd, cm, gifFile, 'gif', 'WriteMode', 'append', 'DelayTime', delayTime);
     end
-    % visualize the first detected loop closure, if you want to see the
-    % complete map building process, remove the if condition below
+    
+    % Optional: visualize first loop closure
     if optimizationInfo.IsPerformed && ~firstTimeLCDetected
-        show(slamAlg, 'Poses', 'off');
-        hold on;
-        show(slamAlg.PoseGraph); 
-        hold off;
+        hold on; show(slamAlg.PoseGraph); hold off;
         firstTimeLCDetected = true;
-        drawnow
     end
 end
-title('First loop closure');
-% Visualize the Constructed Map and Trajectory of the Robot
-% Plot the final built map after all scans are added to the slamAlg object.
-% Though the previous for loop only plotted the initial closure, all the scans were added.
 
-figure
-show(slamAlg);
-title({'Final Built Map of the Environment', 'Trajectory of the Robot'});
+disp(['✅ GIF with robot path saved: ', gifFile]);
 
-% Build Occupancy Grid Map
-% The optimized scans and poses can be used to generate a occupancyMap,
-% which represents the environment as a probabilistic occupancy grid.
-[scans, optimizedPoses]  = scansAndPoses(slamAlg);
+%% Final map
+[scans, optimizedPoses] = scansAndPoses(slamAlg);
 map = buildMap(scans, optimizedPoses, mapResolution, maxLidarRange);
-figure; 
-show(map);
-hold on
-show(slamAlg.PoseGraph, 'IDs', 'off');
-hold off
-title('Occupancy Grid Map Built Using Lidar SLAM');
-% Saving Occupancy Map in .mat Format
-save('../../data/maps/IOTFactoryOccupancyGridMap.mat', 'map');
-
-load("../../data/maps/IOTFactoryOccupancyGridMap.mat","map")
-show(map)
-
 occMatrix = occupancyMatrix(map);
 
-% Get dynamic thresholds from map object
+% Final PGM with thresholds
 occupied_thresh = map.OccupiedThreshold;
 free_thresh = map.FreeThreshold;
+img = uint8(127 * ones(size(occMatrix)));
+img(occMatrix >= occupied_thresh) = 0;
+img(occMatrix <= free_thresh) = 255;
 
-% Create image
-img = uint8(127 * ones(size(occMatrix)));  % Unknown = gray
-img(occMatrix >= occupied_thresh) = 0;     % Occupied = black
-img(occMatrix <= free_thresh) = 255;       % Free = white
+% Visualize final map with trajectory
+figure; imshow(img); hold on;
+xPos = optimizedPoses(:,1);
+yPos = optimizedPoses(:,2);
+[rows, cols] = size(img);
+xImg = round((xPos - map.GridLocationInWorld(1)) / (1/mapResolution));
+yImg = round((yPos - map.GridLocationInWorld(2)) / (1/mapResolution));
+yImg = rows - yImg;
+plot(xImg, yImg, 'r-', 'LineWidth', 2);
+plot(xImg(end), yImg(end), 'ro', 'MarkerFaceColor','r');
+title('Final Occupancy Map + Robot Path');
 
-% Save PGM image
-imwrite(img, '../../data/maps/IOTFactoryOccupancyGridMap.pgm');
+% Save final PGM
+pgmFile = '../../data/maps/localization-map.pgm';
+imwrite(img, pgmFile);
 
-origin = map.GridLocationInWorld;          % [x, y] of bottom-left
-resolution = 1 / map.Resolution;           % meters per cell
-
-fid = fopen('../../data/maps/IOTFactoryOccupancyGridMap.yaml', 'w');
-fprintf(fid, 'image: IOTFactoryOccupancyGridMap.pgm\n');
-fprintf(fid, 'resolution: %.4f\n', resolution);
-fprintf(fid, 'origin: [%.4f, %.4f, 0.0]\n', origin(1), origin(2));
+% Save YAML
+origin = map.GridLocationInWorld;
+resolution = 1 / map.Resolution;
+yamlFile = '../../data/maps/localization-map.yaml';
+fid = fopen(yamlFile, 'w');
+fprintf(fid, 'image: localization-map.pgm\n');
+fprintf(fid, 'resolution: %.17g\n', resolution);
+fprintf(fid, 'origin: [%.3f, %.3f, 0]\n', origin(1), origin(2));
 fprintf(fid, 'negate: 0\n');
-fprintf(fid, 'occupied_thresh: %.2f\n', occupied_thresh);
-fprintf(fid, 'free_thresh: %.2f\n', free_thresh);
+fprintf(fid, 'occupied_thresh: %.17g\n', occupied_thresh);
+fprintf(fid, 'free_thresh: %.17g\n', free_thresh);
 fclose(fid);
+
+disp('✅ Final map with trajectory saved as PGM + YAML!');
