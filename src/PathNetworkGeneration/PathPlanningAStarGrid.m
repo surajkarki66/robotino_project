@@ -1,10 +1,8 @@
 %% Load Occupancy Map
-% Load the map from IOT.mat and set its world location
-load('../../data/maps/IOT.mat', 'map');
+load('../../data/maps/iot.mat', 'map');
 map.GridLocationInWorld = [-39.975, -39.975];
 
 %% Define Docking Points and Parking Points
-% Coordinates for docking nodes (in meters)
 coords_docking_pts = [
     -13.1368,  2.67684;
     -10.7464,  2.74653;
@@ -18,7 +16,6 @@ coords_docking_pts = [
     -1.747,   -1.418
 ];
 
-% Coordinates for parking nodes (in meters)
 coords_parking_pts = [
     -15.2618,  0.852601;
     -14.215,   0.83;
@@ -27,12 +24,10 @@ coords_parking_pts = [
     -0.161829, 1.52521
 ];
 
-% Combine docking and parking nodes
 coords_nodes = [coords_docking_pts; coords_parking_pts];
 numNodes = size(coords_nodes, 1);
 
 %% Define Stations
-% Coordinates for stations (in meters)
 coords_stations = [
     -15.39,   2.552;
     -15.752,  5.251;
@@ -49,79 +44,81 @@ coords_stations = [
 ];
 
 %% Plot Map with Nodes and Stations
-% Visualize the map, nodes, and stations
 figure;
 show(map);
 hold on;
 axis equal;
-plot(coords_nodes(:, 1), coords_nodes(:, 2), 'ko', 'MarkerFaceColor', 'g');
-plot(coords_stations(:, 1), coords_stations(:, 2), 'yo', 'MarkerFaceColor', 'y');
+
+% Docking nodes in green
+plot(coords_docking_pts(:,1), coords_docking_pts(:,2), 'ko', 'MarkerFaceColor', 'g');
+
+% Parking nodes in blue
+plot(coords_parking_pts(:,1), coords_parking_pts(:,2), 'ko', 'MarkerFaceColor', 'b');
+
+% Stations in yellow
+plot(coords_stations(:,1), coords_stations(:,2), 'yo', 'MarkerFaceColor', 'y');
+
 title('IoT Factory Map with Nodes and Stations');
+legend('Docking Nodes', 'Parking Nodes', 'Stations');
 
 %% Inflate Map for Planning
-% Create a copy of the map and inflate obstacles by 0.3 meters
 inflatedMap = copy(map);
-inflate(inflatedMap, 0.3);  % 0.3 meters safety clearance
+inflate(inflatedMap, 0.3);
 
 %% Create A* Planner
-% Configure A* planner for the inflated map
 planner = plannerAStarGrid(inflatedMap);
 
-%% Build Adjacency Matrix for Nearby Obstacle-Free Paths
-% Initialize adjacency matrix and paths cell array
+%% Build Adjacency Matrix & Paths
 adjMatrix = inf(numNodes);
 paths = cell(numNodes);
-maxEdgeDist = 4.0;  % Only connect nodes within 4 meters
+maxEdgeDist = 4.0;
 
 for i = 1:numNodes
-    for j = i + 1:numNodes
-        % Skip connections between parking nodes
-        if ismember(i, (length(coords_docking_pts) + 1):numNodes) && ...
-           ismember(j, (length(coords_docking_pts) + 1):numNodes)
+    for j = i+1:numNodes
+        if ismember(i, (length(coords_docking_pts)+1):numNodes) && ...
+           ismember(j, (length(coords_docking_pts)+1):numNodes)
             continue;
         end
-        
-        % Check if nodes are within maxEdgeDist
-        if norm(coords_nodes(i, :) - coords_nodes(j, :)) <= maxEdgeDist
-            startGrid = world2grid(inflatedMap, coords_nodes(i, :));
-            goalGrid  = world2grid(inflatedMap, coords_nodes(j, :));
+        if norm(coords_nodes(i,:) - coords_nodes(j,:)) <= maxEdgeDist
+            startGrid = world2grid(inflatedMap, coords_nodes(i,:));
+            goalGrid  = world2grid(inflatedMap, coords_nodes(j,:));
             [pathGrid, ~] = plan(planner, startGrid, goalGrid);
 
-            if ~isempty(pathGrid)  % Path exists
+            if ~isempty(pathGrid)
                 pathWorld = grid2world(inflatedMap, pathGrid);
-                cost = sum(vecnorm(diff(pathWorld, 1, 1), 2, 2));
-                adjMatrix(i, j) = cost;
-                adjMatrix(j, i) = cost;
-                paths{i, j} = pathWorld;
-                paths{j, i} = flipud(pathWorld);
+                cost = sum(vecnorm(diff(pathWorld,1,1),2,2));
+                adjMatrix(i,j) = cost;
+                adjMatrix(j,i) = cost;
+                paths{i,j} = pathWorld;
+                paths{j,i} = flipud(pathWorld);
             end
         end
     end
 end
 
 %% Build MATLAB Graph
-% Create graph from adjacency matrix
 G = graph(adjMatrix);
 
 %% Plot Paths
-% Visualize paths, nodes, and stations
 figure;
 show(map);
 hold on;
 axis equal;
-plot(coords_nodes(:, 1), coords_nodes(:, 2), 'ko', 'MarkerFaceColor', 'g');
-plot(coords_stations(:, 1), coords_stations(:, 2), 'yo', 'MarkerFaceColor', 'y');
+
+plot(coords_docking_pts(:,1), coords_docking_pts(:,2), 'ko', 'MarkerFaceColor', 'g');
+plot(coords_parking_pts(:,1), coords_parking_pts(:,2), 'ko', 'MarkerFaceColor', 'b');
+plot(coords_stations(:,1), coords_stations(:,2), 'yo', 'MarkerFaceColor', 'y');
 
 for e = 1:numedges(G)
-    [s, t] = findedge(G, e);
-    if ~isempty(paths{s, t})
-        path = paths{s, t};
-        plot(path(:, 1), path(:, 2), 'g-', 'LineWidth', 1.5);
+    [s,t] = findedge(G, e);
+    if ~isempty(paths{s,t})
+        path = paths{s,t};
+        plot(path(:,1), path(:,2), 'g-', 'LineWidth', 1.5);
     end
 end
 
 title('Obstacle-Free Navigation Graph');
-legend('Nodes', 'Stations', 'Graph edges');
+legend('Docking Nodes', 'Parking Nodes', 'Stations', 'Graph edges');
 
 %% Generate navigation-paths.xml
 % Write paths to XML file, including start and end nodes

@@ -1,6 +1,6 @@
 %% Load Occupancy Map
-% Load the map from IOT.mat and set its world location
-load('../../data/maps/IOT.mat', 'map');
+% Load the map from iot.mat and set its world location
+load('../../data/maps/iot.mat', 'map');
 map.GridLocationInWorld = [-39.975, -39.975];
 
 %% Define Docking Nodes
@@ -55,21 +55,27 @@ coords_stations = [
 ];
 
 %% Plot Map with Nodes and Stations
-% Visualize the map, nodes, and stations
 figure;
 show(map);
 hold on;
 axis equal;
-plot(coords_nodes(:, 1), coords_nodes(:, 2), 'ko', 'MarkerFaceColor', 'g');
+
+% Plot docking nodes in green
+plot(coords_docking(:, 1), coords_docking(:, 2), 'ko', 'MarkerFaceColor', 'g');
+
+% Plot parking nodes in blue
+plot(coords_parking(:, 1), coords_parking(:, 2), 'ko', 'MarkerFaceColor', 'b');
+
+% Plot stations in yellow
 plot(coords_stations(:, 1), coords_stations(:, 2), 'yo', 'MarkerFaceColor', 'y');
+
 title('IoT Factory Map with Nodes and Stations');
+legend('Docking Nodes', 'Parking Nodes', 'Stations');
 
 %% Use Original Map for Planning
-% Use the original map without inflation
 plannerMap = map;
 
 %% Create 2D RRT* State Space & Validator
-% Define SE2 state space (x, y, yaw) and validator
 bounds = [plannerMap.XWorldLimits; plannerMap.YWorldLimits; [-pi pi]];
 ss = stateSpaceSE2(bounds);
 
@@ -78,30 +84,23 @@ stateValidator.Map = plannerMap;
 stateValidator.ValidationDistance = 0.05;
 
 %% Planner (RRT*)
-% Configure RRT* planner
 planner = plannerRRTStar(ss, stateValidator);
 planner.MaxConnectionDistance = 3.0;
 planner.MaxIterations = 10000;
 
 %% Build Adjacency Matrix & Store Paths
-% Initialize adjacency matrix and paths cell array
 adjMatrix = inf(numNodes);
 paths = cell(numNodes);
-maxEdgeDist = 4.0; % Only connect nodes within 4 meters
+maxEdgeDist = 4.0;
 
 for i = 1:numNodes
     for j = i + 1:numNodes
-        % Skip connections between parking nodes
         if ismember(i, parkingIdx) && ismember(j, parkingIdx)
             continue;
         end
-        
-        % Check if nodes are within maxEdgeDist
         if norm(coords_nodes(i, :) - coords_nodes(j, :)) <= maxEdgeDist
             startSE2 = [coords_nodes(i, :), 0];
             goalSE2 = [coords_nodes(j, :), 0];
-
-            % Validate start and goal states
             if isStateValid(stateValidator, startSE2) && isStateValid(stateValidator, goalSE2)
                 try
                     [pthObj, solnInfo] = plan(planner, startSE2, goalSE2);
@@ -110,8 +109,8 @@ for i = 1:numNodes
                         cost = pathLength(shortenedPath);
                         adjMatrix(i, j) = cost;
                         adjMatrix(j, i) = cost;
-                        paths{i, j} = shortenedPath.States(:, 1:2); % Store x, y only
-                        paths{j, i} = flipud(shortenedPath.States(:, 1:2)); % Reverse path
+                        paths{i, j} = shortenedPath.States(:, 1:2);
+                        paths{j, i} = flipud(shortenedPath.States(:, 1:2));
                     end
                 catch
                     fprintf('No path between node %d and %d\n', i, j);
@@ -122,19 +121,20 @@ for i = 1:numNodes
 end
 
 %% Build MATLAB Graph
-% Create graph from adjacency matrix
 G = graph(adjMatrix);
 
 %% Plot Obstacle-Free Navigation Graph
-% Visualize paths and turning points
 figure;
 show(map);
 hold on;
 axis equal;
-plot(coords_nodes(:, 1), coords_nodes(:, 2), 'ko', 'MarkerFaceColor', 'g');
+
+% Plot nodes and stations
+plot(coords_docking(:, 1), coords_docking(:, 2), 'ko', 'MarkerFaceColor', 'g');
+plot(coords_parking(:, 1), coords_parking(:, 2), 'ko', 'MarkerFaceColor', 'b');
 plot(coords_stations(:, 1), coords_stations(:, 2), 'yo', 'MarkerFaceColor', 'y');
 
-turnThreshold = cosd(10); % Turning points > 10 degrees
+turnThreshold = cosd(10);
 
 for e = 1:numedges(G)
     [s, t] = findedge(G, e);
@@ -156,16 +156,11 @@ for e = 1:numedges(G)
                 end
             end
         end
-
-        % Plot turning points as green circles
-        if ~isempty(turningPts)
-            plot(turningPts(:, 1), turningPts(:, 2), 'go', 'MarkerFaceColor', 'g', 'MarkerSize', 6);
-        end
     end
 end
 
 title('Obstacle-Free Navigation Graph');
-legend('Nodes', 'Stations', 'Graph edges');
+legend('Docking Nodes', 'Parking Nodes', 'Stations', 'Graph edges');
 
 %% Generate navigation-paths.xml
 % Write paths with nodes and turning points to XML file

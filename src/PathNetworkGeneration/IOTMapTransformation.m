@@ -21,10 +21,10 @@ mapSwapped = occupancyMap(occMatrixFlippedH, map.Resolution);
 % Swap origin coordinates accordingly (no addition)
 mapSwapped.GridLocationInWorld = map.GridLocationInWorld([2,1]);
 
-%% Plot swapped & horizontally flipped map
+%% Plot swapped & horizontally flipped map (for visualization only)
 figure;
-h = show(mapSwapped);
-title('Map with X and Y axes swapped and horizontally flipped');
+show(mapSwapped);
+title('Occupancy Map of IOT Factory');
 
 %% Print the origin of the final map
 disp('GridLocationInWorld of the final map:');
@@ -37,6 +37,9 @@ occImage = flipud(occImage);                    % optional: flip vertically for 
 imwrite(occImage, 'rotated_swapped_flipped_map.pgm');
 
 %% Save the occupancy map as .mat
-save('rotated_swapped_flipped_map.mat', 'mapSwapped');
+save('new_map.mat', 'map');
 
-disp('Map saved as .pgm and .mat successfully.');
+%% Save raw occupancy grid as high-quality PNG (no axes/grid/labels)
+imwrite(occImage, 'new_map.png', 'png');
+
+disp('Map saved as .pgm, .mat, and .png successfully (PNG same style as .pgm).');
