@@ -4,9 +4,6 @@
 data = load("../../data/lidar_data/wareHouse.mat");
 scans = data.wareHouseScans;
 
-disp(scans)
-
-
 % Create a lidarSLAM object and set the map resolution and the max lidar range.
 
 maxLidarRange = 8; %smaller than 10 meters
@@ -81,12 +78,12 @@ show(map);
 hold on
 show(slamAlg.PoseGraph, 'IDs', 'off');
 hold off
-title('Occupancy Grid Map Built Using Lidar SLAM');
+title('Occupancy Map Built Using Lidar SLAM');
 
 % Saving Occupancy Map in .mat Format
-save('../../data/maps/wareHouseOccupancyGridMap.mat', 'map');
+save('../../data/maps/wareHouseOccupancyMap.mat', 'map');
 
-load("../../data/maps/wareHouseOccupancyGridMap.mat","map")
+load("../../data/maps/wareHouseOccupancyMap.mat","map")
 show(map)
 
 occMatrix = occupancyMatrix(map);
@@ -101,16 +98,43 @@ img(occMatrix >= occupied_thresh) = 0;     % Occupied = black
 img(occMatrix <= free_thresh) = 255;       % Free = white
 
 % Save PGM image
-imwrite(img, '../../data/maps/wareHouseOccupancyGridMap.pgm');
+imwrite(img, '../../data/maps/wareHouseOccupancyMap.pgm');
+
+% Save Png image
+imwrite(img, '../../data/maps/wareHouseOccupancyMap.png');
 
 origin = map.GridLocationInWorld;          % [x, y] of bottom-left
 resolution = 1 / map.Resolution;           % meters per cell
 
-fid = fopen('../../data/maps/wareHouseOccupancyGridMap.yaml', 'w');
-fprintf(fid, 'image: wareHouseOccupancyGridMap.pgm\n');
+fid = fopen('../../data/maps/wareHouseOccupancyMap.yaml', 'w');
+fprintf(fid, 'image: wareHouseOccupancyMap.pgm\n');
 fprintf(fid, 'resolution: %.4f\n', resolution);
 fprintf(fid, 'origin: [%.4f, %.4f, 0.0]\n', origin(1), origin(2));
 fprintf(fid, 'negate: 0\n');
 fprintf(fid, 'occupied_thresh: %.2f\n', occupied_thresh);
 fprintf(fid, 'free_thresh: %.2f\n', free_thresh);
 fclose(fid);
+
+% Flip occupancy matrix to match world coordinates
+imgFlipped = flipud(img);
+
+% Display map
+figure;
+imagesc(map.XWorldLimits, map.YWorldLimits, imgFlipped);
+axis xy;  % y-axis upward
+axis equal tight;
+colormap(gray);
+hold on;
+
+% Plot robot trajectory in world coordinates
+[~, optimizedPoses] = scansAndPoses(slamAlg);
+plot(optimizedPoses(:,1), optimizedPoses(:,2), 'r-', 'LineWidth', 2);       % path
+plot(optimizedPoses(end,1), optimizedPoses(end,2), 'ro', 'MarkerFaceColor','r'); % current robot
+
+title('Warehouse Occupancy Map with Robot Trajectory');
+hold off;
+
+% save PNG with trajectory overlay
+frame = getframe(gcf);
+imWithTrajectory = frame2im(frame);
+imwrite(imWithTrajectory, '../../data/maps/wareHouseOccupancyMapwithTrajectory.png');
