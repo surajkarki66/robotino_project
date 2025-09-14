@@ -1,5 +1,5 @@
 %% Load Lidar and Odometry Data
-load("../../data/maps/IndoorLidarScanAndOdometryData.mat")
+load("../../data/lidar_data/IndoorLidarScanAndOdometryData.mat")
 
 %% Initialize Lidar Scan Map
 MaxLidarRange = 8;
