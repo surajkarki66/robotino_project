@@ -1,22 +1,10 @@
 %% Build Map from 2-D Lidar Scans Using SLAM
 
-% Load Laser Scans from CSV
-data = readmatrix('../../data/lidar_data/sample_data/iot_lidar_scans_1_clean.csv');  
-distances = data(:,1);
-angles    = data(:,2);
-scan_idx  = data(:,3);
+% Load pre-saved lidar scans
+load('../../data/lidar_data/iot_factory_lidar_data_1_clean.mat', 'iotScans');
 
-unique_scans = unique(scan_idx);
-numScans = numel(unique_scans);
-disp(['Total scans: ', num2str(numScans)])
-
-iotScans = cell(1, numScans);
-for k = 1:numScans
-    idx = scan_idx == unique_scans(k);
-    ranges = distances(idx);
-    angs   = angles(idx);
-    iotScans{k} = lidarScan(ranges, angs);
-end
+numScans = numel(iotScans);
+disp(['Total scans loaded: ', num2str(numScans)]);
 
 %% Create lidarSLAM object
 maxLidarRange = 8;     % slightly smaller than max sensor range
@@ -28,7 +16,7 @@ slamAlg.LoopClosureThreshold = 210;
 slamAlg.LoopClosureSearchRadius = 8;
 
 %% Add first 10 scans (test)
-for i = 1:10
+for i = 1:min(10, numScans)
     [isScanAccepted, loopClosureInfo, optimizationInfo] = addScan(slamAlg, iotScans{i});
     if isScanAccepted
         fprintf('Added scan %d\n', i);
@@ -48,9 +36,7 @@ for i = 11:numScans
     if ~isScanAccepted
         continue;
     end
-    if isScanAccepted
-        fprintf('Added scan %d\n', i);
-    end
+    fprintf('Added scan %d\n', i);
     if optimizationInfo.IsPerformed && ~firstTimeLCDetected
         show(slamAlg, 'Poses', 'off');
         hold on;
@@ -80,9 +66,6 @@ title('Occupancy Map Built Using Lidar SLAM');
 
 %% Save occupancy map
 save('../../data/maps/IOTFactoryOccupancyMap.mat', 'map');
-
-load('../../data/maps/IOTFactoryOccupancyMap.mat', 'map')
-show(map)
 
 occMatrix = occupancyMatrix(map);
 
