@@ -1,7 +1,7 @@
 % Build Map from 2-D Lidar Scans Using SLAM
 
 % Load Laser Scans
-data = load("../../data/lidar_data/iot_factory_lidar_data_1_clean.mat");
+data = load("../../data/lidar_data/iot_factory_lidar_data_2_clean.mat");
 scans = data.iotScans;
 
 % Compute max distance directly from ranges

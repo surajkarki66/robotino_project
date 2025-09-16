@@ -1,39 +1,36 @@
-%% CSV to Scans
-data = readmatrix('../../data/lidar_data/sample_data/iot_lidar_scans_1_clean.csv');  
-distances = data(:,1);
-angles    = data(:,2);
-scan_idx  = data(:,3);
+%% Load Laser Scans
+data = load("../../data/lidar_data/iot_factory_lidar_data_1_clean.mat");
+scans = data.iotScans;  % cell array of lidarScan objects
+numScans = numel(scans);
+fprintf('Total scans loaded: %d\n', numScans);
 
-unique_scans = unique(scan_idx);
-numScans = numel(unique_scans);
-disp(['Total scans: ', num2str(numScans)])
-
-iotScans = cell(1, numScans);
-for k = 1:numScans
-    idx = scan_idx == unique_scans(k);
-    ranges = distances(idx);
-    angs   = angles(idx);
-    iotScans{k} = lidarScan(ranges, angs);
+%% Compute maxLidarRange dynamically
+maxDist = 0;
+for i = 1:numScans
+    maxDist = max(maxDist, max(scans{i}.Ranges));
 end
+maxLidarRange = maxDist * 0.95;  % slightly smaller than max distance
+fprintf('Maximum distance in scans: %.2f meters\n', maxDist);
+fprintf('Max lidar range set to: %.2f meters\n', maxLidarRange);
 
 %% SLAM setup
-maxLidarRange = 8; 
 mapResolution = 20; 
 slamAlg = lidarSLAM(mapResolution, maxLidarRange);
 slamAlg.LoopClosureThreshold = 210;  
 slamAlg.LoopClosureSearchRadius = 8;
 
 %% GIF setup
-gifFile = '../../data/maps/iotFactoryOccupancyMap.gif';
-delayTime = 0.3;
+gifFile = '../../data/maps/IOTFactoryOccupancyMap.gif';
+delayTime = 0.01;
 hFig = figure('Position', [100 100 800 800]);
 
-
-firstTimeLCDetected = false;
-%% Add scans and build GIF with robot path
-for i = 1:length(iotScans)
-    [isScanAccepted, ~, optimizationInfo] = addScan(slamAlg, iotScans{i});
-    if ~isScanAccepted, continue; end
+%% Add scans and build GIF
+for i = 1:numScans
+    [isScanAccepted, ~, ~] = addScan(slamAlg, scans{i});
+    if ~isScanAccepted
+        fprintf('Scan %d rejected (too close to previous scan)\n', i);
+        continue; 
+    end
     fprintf('Added scan %d\n', i);
     
     % Build current occupancy map
@@ -42,11 +39,9 @@ for i = 1:length(iotScans)
     occNow = occupancyMatrix(mapNow);
 
     % Create PGM-style image
-    occupied_thresh = mapNow.OccupiedThreshold;
-    free_thresh = mapNow.FreeThreshold;
     imgNow = uint8(127 * ones(size(occNow)));
-    imgNow(occNow >= occupied_thresh) = 0;
-    imgNow(occNow <= free_thresh) = 255;
+    imgNow(occNow >= mapNow.OccupiedThreshold) = 0;
+    imgNow(occNow <= mapNow.FreeThreshold) = 255;
     
     % Display map
     imagesc(imgNow);
@@ -58,7 +53,6 @@ for i = 1:length(iotScans)
     if ~isempty(posesNow)
         xPos = posesNow(:,1);
         yPos = posesNow(:,2);
-        % Convert world coordinates to image coordinates
         [rows, ~] = size(imgNow);
         xImg = round((xPos - mapNow.GridLocationInWorld(1)) / (1/mapResolution));
         yImg = round((yPos - mapNow.GridLocationInWorld(2)) / (1/mapResolution));
@@ -67,7 +61,6 @@ for i = 1:length(iotScans)
         plot(xImg(end), yImg(end), 'ro', 'MarkerFaceColor','r'); % current robot
     end
     
-    title('Occupancy Map of the IOT Factory');
     hold off;
     drawnow;
     
@@ -82,73 +75,4 @@ for i = 1:length(iotScans)
     end
 end
 
-disp(['✅ GIF with robot path saved: ', gifFile]);
-
-%% Final map
-[scans, optimizedPoses] = scansAndPoses(slamAlg);
-map = buildMap(scans, optimizedPoses, mapResolution, maxLidarRange);
-occMatrix = occupancyMatrix(map);
-
-% Final PGM with thresholds
-occupied_thresh = map.OccupiedThreshold;
-free_thresh = map.FreeThreshold;
-img = uint8(127 * ones(size(occMatrix)));
-img(occMatrix >= occupied_thresh) = 0;
-img(occMatrix <= free_thresh) = 255;
-
-% Visualize final map with trajectory
-figure; imshow(img); hold on;
-xPos = optimizedPoses(:,1);
-yPos = optimizedPoses(:,2);
-[rows, cols] = size(img);
-xImg = round((xPos - map.GridLocationInWorld(1)) / (1/mapResolution));
-yImg = round((yPos - map.GridLocationInWorld(2)) / (1/mapResolution));
-yImg = rows - yImg;
-plot(xImg, yImg, 'r-', 'LineWidth', 2);
-plot(xImg(end), yImg(end), 'ro', 'MarkerFaceColor','r');
-title('Final Occupancy Map + Robot Path');
-
-% Save final PGM
-pgmFile = '../../data/maps/localization-map.pgm';
-pngFile = '../../data/maps/localization-map.png';
-imwrite(img, pgmFile);
-imwrite(img, pngFile);
-
-% Save YAML
-origin = map.GridLocationInWorld;
-resolution = 1 / map.Resolution;
-yamlFile = '../../data/maps/localization-map.yaml';
-fid = fopen(yamlFile, 'w');
-fprintf(fid, 'image: localization-map.pgm\n');
-fprintf(fid, 'resolution: %.17g\n', resolution);
-fprintf(fid, 'origin: [%.3f, %.3f, 0]\n', origin(1), origin(2));
-fprintf(fid, 'negate: 0\n');
-fprintf(fid, 'occupied_thresh: %.17g\n', occupied_thresh);
-fprintf(fid, 'free_thresh: %.17g\n', free_thresh);
-fclose(fid);
-
-disp('✅ Final map with trajectory saved');
-
-% Flip occupancy matrix to match world coordinates
-imgFlipped = flipud(img);
-
-% Display map
-figure;
-imagesc(map.XWorldLimits, map.YWorldLimits, imgFlipped);
-axis xy;  % y-axis upward
-axis equal tight;
-colormap(gray);
-hold on;
-
-% Plot robot trajectory in world coordinates
-[~, optimizedPoses] = scansAndPoses(slamAlg);
-plot(optimizedPoses(:,1), optimizedPoses(:,2), 'r-', 'LineWidth', 2);       % path
-plot(optimizedPoses(end,1), optimizedPoses(end,2), 'ro', 'MarkerFaceColor','r'); % current robot
-
-title('IOT Factory Occupancy Map with Robot Trajectory');
-hold off;
-
-% save PNG with trajectory overlay
-frame = getframe(gcf);
-imWithTrajectory = frame2im(frame);
-imwrite(imWithTrajectory, '../../data/maps/IOTFactoryOccupancyMapwithTrajectory.png');
+fprintf('✅ GIF with robot path saved: %s\n', gifFile);

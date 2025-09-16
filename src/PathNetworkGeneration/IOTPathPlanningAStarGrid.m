@@ -1,5 +1,5 @@
 %% Load Occupancy Map
-load('../../data/maps/iot.mat', 'map');
+load('../../data/maps/iotFactoryOccupancyMap.mat', 'map');
 map.GridLocationInWorld = [-39.975, -39.975];
 
 %% Define Docking Points and Parking Points
