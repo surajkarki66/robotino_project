@@ -25,49 +25,23 @@ slamAlg = lidarSLAM(mapResolution, maxLidarRange);
 % likely to produce false positives. Using a higher loop closure search radius allows the algorithm
 % to search a wider range of the map around current pose estimate for loop closures.
 
-slamAlg.LoopClosureThreshold = 210;  
-slamAlg.LoopClosureSearchRadius = 8;
-
-% Incrementally add scans to the slamAlg object. Scan numbers are printed if added to the map.
-% The object rejects scans if the distance between scans is too small.
-% Add the first 10 scans first to test your algorithm.
-for i=1:10
-    [isScanAccepted, loopClosureInfo, optimizationInfo] = addScan(slamAlg, scans{i});
-    if isScanAccepted
-        fprintf('Added scan %d \n', i);
-    end
-end
-
-% Reconstruct the scene by plotting the scans and poses tracked by the slamAlg.
-figure;
-show(slamAlg);
-title({'Map of the Environment','Pose Graph for Initial 10 Scans'});
+slamAlg.LoopClosureThreshold = 220;  
+slamAlg.LoopClosureSearchRadius = 7;
 
 % Observe the Effect of Loop Closures and the Optimization Process
 % Continue to add scans in a loop. Loop closures should be automatically detected as the robot moves.
 % Pose graph optimization is performed whenever a loop closure is identified.
 % The output optimizationInfo has a field, IsPerformed, that indicates when pose graph optimization occurs.
 
-firstTimeLCDetected = false;
 
 figure;
-for i=10:length(scans)
+for i=1:length(scans)
     [isScanAccepted, loopClosureInfo, optimizationInfo] = addScan(slamAlg, scans{i});
     if isScanAccepted
        fprintf('Added scan %d \n', i);
     end
     if ~isScanAccepted
         continue;
-    end
-    % visualize the first detected loop closure, if you want to see the
-    % complete map building process, remove the if condition below
-    if optimizationInfo.IsPerformed && ~firstTimeLCDetected
-        show(slamAlg, 'Poses', 'off');
-        hold on;
-        show(slamAlg.PoseGraph); 
-        hold off;
-        firstTimeLCDetected = true;
-        drawnow
     end
 end
 title('First loop closure');
@@ -92,9 +66,9 @@ hold off
 title('Occupancy Map Built Using Lidar SLAM');
 
 % Saving Occupancy Map in .mat Format
-save('../../data/maps/IOTFactoryOccupancyMap.mat', 'map');
+save('../../data/maps/IOTFactoryOccupancyMap2.mat', 'map');
 
-load("../../data/maps/IOTFactoryOccupancyMap.mat","map")
+load("../../data/maps/IOTFactoryOccupancyMap2.mat","map")
 show(map)
 
 occMatrix = occupancyMatrix(map);
@@ -109,16 +83,16 @@ img(occMatrix >= occupied_thresh) = 0;     % Occupied = black
 img(occMatrix <= free_thresh) = 255;       % Free = white
 
 % Save PGM image
-imwrite(img, '../../data/maps/IOTFactoryOccupancyMap.pgm');
+imwrite(img, '../../data/maps/IOTFactoryOccupancyMap2.pgm');
 
 % Save Png image
-imwrite(img, '../../data/maps/IOTFactoryOccupancyMap.png');
+imwrite(img, '../../data/maps/IOTFactoryOccupancyMap2.png');
 
 origin = map.GridLocationInWorld;          % [x, y] of bottom-left
 resolution = 1 / map.Resolution;           % meters per cell
 
-fid = fopen('../../data/maps/IOTFactoryOccupancyMap.yaml', 'w');
-fprintf(fid, 'image: wareHouseOccupancyMap.pgm\n');
+fid = fopen('../../data/maps/IOTFactoryOccupancyMap2.yaml', 'w');
+fprintf(fid, 'image: wareHouseOccupancyMap2.pgm\n');
 fprintf(fid, 'resolution: %.4f\n', resolution);
 fprintf(fid, 'origin: [%.4f, %.4f, 0.0]\n', origin(1), origin(2));
 fprintf(fid, 'negate: 0\n');
@@ -148,4 +122,4 @@ hold off;
 % save PNG with trajectory overlay
 frame = getframe(gcf);
 imWithTrajectory = frame2im(frame);
-imwrite(imWithTrajectory, '../../data/maps/IOTFactoryOccupancyMapwithTrajectory.png');
+imwrite(imWithTrajectory, '../../data/maps/IOTFactoryOccupancyMapwithTrajectory2.png');
