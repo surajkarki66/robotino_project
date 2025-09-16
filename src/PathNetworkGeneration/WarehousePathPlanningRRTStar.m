@@ -1,6 +1,3 @@
-%% RRT* planning with robust path shortening (shortenpath + fallback)
-clear; close all;
-
 %% Load Occupancy Map
 load('../../data/maps/wareHouseOccupancyMap.mat', 'map');
 

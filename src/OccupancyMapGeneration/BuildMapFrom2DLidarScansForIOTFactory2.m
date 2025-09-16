@@ -14,7 +14,7 @@ fprintf('Maximum distance in dataset: %.2f meters\n', maxDist);
 
 % Create a lidarSLAM object and set the map resolution and the max lidar range.
 
-maxLidarRange = maxDist * 0.95;  % 95% of max range
+maxLidarRange = 10;
 mapResolution = 20; % Set the max lidar range slightly smaller than the max scan range (8m), as the laser readings are less accurate near max range. Set the grid map resolution to 20 cells per meter, which gives a 5cm precision.
 slamAlg = lidarSLAM(mapResolution, maxLidarRange);
 
@@ -25,8 +25,8 @@ slamAlg = lidarSLAM(mapResolution, maxLidarRange);
 % likely to produce false positives. Using a higher loop closure search radius allows the algorithm
 % to search a wider range of the map around current pose estimate for loop closures.
 
-slamAlg.LoopClosureThreshold = 220;  
-slamAlg.LoopClosureSearchRadius = 7;
+slamAlg.LoopClosureThreshold = 110;  
+slamAlg.LoopClosureSearchRadius = 9;
 
 % Observe the Effect of Loop Closures and the Optimization Process
 % Continue to add scans in a loop. Loop closures should be automatically detected as the robot moves.
@@ -66,9 +66,9 @@ hold off
 title('Occupancy Map Built Using Lidar SLAM');
 
 % Saving Occupancy Map in .mat Format
-save('../../data/maps/IOTFactoryOccupancyMap2.mat', 'map');
+save('../../data/maps/IOTFactoryOccupancyMap5.mat', 'map');
 
-load("../../data/maps/IOTFactoryOccupancyMap2.mat","map")
+load("../../data/maps/IOTFactoryOccupancyMap5.mat","map")
 show(map)
 
 occMatrix = occupancyMatrix(map);
@@ -83,16 +83,16 @@ img(occMatrix >= occupied_thresh) = 0;     % Occupied = black
 img(occMatrix <= free_thresh) = 255;       % Free = white
 
 % Save PGM image
-imwrite(img, '../../data/maps/IOTFactoryOccupancyMap2.pgm');
+imwrite(img, '../../data/maps/IOTFactoryOccupancyMap5.pgm');
 
 % Save Png image
-imwrite(img, '../../data/maps/IOTFactoryOccupancyMap2.png');
+imwrite(img, '../../data/maps/IOTFactoryOccupancyMap5.png');
 
 origin = map.GridLocationInWorld;          % [x, y] of bottom-left
 resolution = 1 / map.Resolution;           % meters per cell
 
-fid = fopen('../../data/maps/IOTFactoryOccupancyMap2.yaml', 'w');
-fprintf(fid, 'image: wareHouseOccupancyMap2.pgm\n');
+fid = fopen('../../data/maps/IOTFactoryOccupancyMap5.yaml', 'w');
+fprintf(fid, 'image: IOTFactoryOccupancyMap5.pgm\n');
 fprintf(fid, 'resolution: %.4f\n', resolution);
 fprintf(fid, 'origin: [%.4f, %.4f, 0.0]\n', origin(1), origin(2));
 fprintf(fid, 'negate: 0\n');
@@ -116,10 +116,10 @@ hold on;
 plot(optimizedPoses(:,1), optimizedPoses(:,2), 'r-', 'LineWidth', 2);       % path
 plot(optimizedPoses(end,1), optimizedPoses(end,2), 'ro', 'MarkerFaceColor','r'); % current robot
 
-title('Warehouse Occupancy Map with Robot Trajectory');
+title('IOT Factory Occupancy Map with Robot Trajectory');
 hold off;
 
 % save PNG with trajectory overlay
 frame = getframe(gcf);
 imWithTrajectory = frame2im(frame);
-imwrite(imWithTrajectory, '../../data/maps/IOTFactoryOccupancyMapwithTrajectory2.png');
+imwrite(imWithTrajectory, '../../data/maps/IOTFactoryOccupancyMapwithTrajectory5.png');

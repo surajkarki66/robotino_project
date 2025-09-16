@@ -1,6 +1,3 @@
-%% Single-source to single-goal A* path planning (interactive only)
-clear; close all;
-
 %% Load Occupancy Map
 load('../../data/maps/wareHouseOccupancyMap.mat', 'map');
 
