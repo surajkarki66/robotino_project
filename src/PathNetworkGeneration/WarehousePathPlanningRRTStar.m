@@ -1,5 +1,5 @@
 %% Load Occupancy Map
-load('../../data/maps/wareHouseOccupancyMap.mat', 'map');
+load('../../data/maps/Warehouse/wareHouseOccupancyMap.mat', 'map');
 
 %% Create 2D RRT* State Space & Validator
 bounds = [map.XWorldLimits; map.YWorldLimits; [-pi pi]];
