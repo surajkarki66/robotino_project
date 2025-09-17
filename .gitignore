@@ -1,0 +1,33 @@
+# MATLAB autosave files
+*.asv
+*.autosave
+
+# MATLAB backup files
+*~ 
+*.bak
+
+# MATLAB temporary files
+*.tmp
+*.temp
+*.log
+
+# MATLAB compiled files
+*.mex*
+*.p
+*.mdl
+*.slx
+
+# MATLAB figure files
+*.fig
+
+# MATLAB project files (user-specific)
+*.prj
+*.mltbx
+
+# MATLAB session / workspace
+*.mexa64
+*.mexmaci64
+*.mexw64
+
+# MATLAB Code Analyzer reports
+mlint.*
