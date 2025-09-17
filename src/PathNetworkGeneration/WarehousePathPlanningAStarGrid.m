@@ -1,5 +1,5 @@
 %% Load Occupancy Map
-load('../../data/maps/wareHouseOccupancyMap.mat', 'map');
+load('../../data/maps/Warehouse/wareHouseOccupancyMap.mat', 'map');
 
 %% Inflate map for safety
 inflatedMap = copy(map);

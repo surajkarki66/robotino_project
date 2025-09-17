@@ -164,7 +164,7 @@ legend('Docking Nodes', 'Parking Nodes', 'Stations', 'Graph edges');
 
 %% Generate navigation-paths.xml
 % Write paths with nodes and turning points to XML file
-fid = fopen('../../data/maps/navigation-paths.xml', 'w');
+fid = fopen('../../data/path_networks/RRTStar/navigation-paths.xml', 'w');
 fprintf(fid, '<root>\n');
 fprintf(fid, '<paths>\n');
 path_id = 1;
@@ -242,7 +242,7 @@ fclose(fid);
 
 %% Generate positions.lisp
 % Write node coordinates (in millimeters) to LISP file
-fid = fopen('../../data/maps/positions.lisp', 'w');
+fid = fopen('../../data/path_networks/RRTStar/positions.lisp', 'w');
 for i = 1:numNodes
     x = coords_nodes(i, 1) * 1000;
     y = coords_nodes(i, 2) * 1000;
@@ -256,7 +256,7 @@ fclose(fid);
 
 %% Generate stations.lisp
 % Write station coordinates and closest node indices to LISP file
-fid = fopen('../../data/maps/stations.lisp', 'w');
+fid = fopen('../../data/path_networks/RRTStar/stations.lisp', 'w');
 station_types = {'CP-F-AASS', 'CP-F-AASS', 'CP-PS-AP6', 'CP-PS-AP5', ...
                  'CP-PS-AP2_4', 'CP-PS-AP1', 'CP-F-BOXES', 'CP-F-ASRS20', ...
                  'CP-F-DOCK', 'CP-F-RASS', 'CP-F-RASS', 'CP-F-RASS'};

@@ -92,9 +92,9 @@ hold off
 title('Occupancy Map Built Using Lidar SLAM');
 
 % Saving Occupancy Map in .mat Format
-save('../../data/maps/IOTFactoryOccupancyMap.mat', 'map');
+save('../../data/maps/IOTFactoryMapwithExp_1/IOTFactoryOccupancyMap.mat', 'map');
 
-load("../../data/maps/IOTFactoryOccupancyMap.mat","map")
+load("../../data/maps/IOTFactoryMapwithExp_1/IOTFactoryOccupancyMap.mat","map")
 show(map)
 
 occMatrix = occupancyMatrix(map);
@@ -109,16 +109,16 @@ img(occMatrix >= occupied_thresh) = 0;     % Occupied = black
 img(occMatrix <= free_thresh) = 255;       % Free = white
 
 % Save PGM image
-imwrite(img, '../../data/maps/IOTFactoryOccupancyMap.pgm');
+imwrite(img, '../../data/maps/IOTFactoryMapwithExp_1/IOTFactoryOccupancyMap.pgm');
 
 % Save Png image
-imwrite(img, '../../data/maps/IOTFactoryOccupancyMap.png');
+imwrite(img, '../../data/maps/IOTFactoryMapwithExp_1/IOTFactoryOccupancyMap.png');
 
 origin = map.GridLocationInWorld;          % [x, y] of bottom-left
 resolution = 1 / map.Resolution;           % meters per cell
 
-fid = fopen('../../data/maps/IOTFactoryOccupancyMap.yaml', 'w');
-fprintf(fid, 'image: wareHouseOccupancyMap.pgm\n');
+fid = fopen('../../data/maps/IOTFactoryMapwithExp_1/IOTFactoryOccupancyMap.yaml', 'w');
+fprintf(fid, 'image: IOTFactoryOccupancyMap.pgm\n');
 fprintf(fid, 'resolution: %.4f\n', resolution);
 fprintf(fid, 'origin: [%.4f, %.4f, 0.0]\n', origin(1), origin(2));
 fprintf(fid, 'negate: 0\n');
@@ -148,4 +148,4 @@ hold off;
 % save PNG with trajectory overlay
 frame = getframe(gcf);
 imWithTrajectory = frame2im(frame);
-imwrite(imWithTrajectory, '../../data/maps/IOTFactoryOccupancyMapwithTrajectory.png');
+imwrite(imWithTrajectory, '../../data/maps/IOTFactoryMapwithExp_1/IOTFactoryOccupancyMapwithTrajectory.png');

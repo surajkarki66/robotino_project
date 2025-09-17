@@ -20,7 +20,7 @@ slamAlg.LoopClosureThreshold = 210;
 slamAlg.LoopClosureSearchRadius = 8;
 
 %% GIF setup
-gifFile = '../../data/maps/IOTFactoryOccupancyMap.gif';
+gifFile = '../../data/maps/IOTFactoryMapwithExp_1/IOTFactoryOccupancyMap.gif';
 delayTime = 0.01;
 hFig = figure('Position', [100 100 800 800]);
 

@@ -90,7 +90,7 @@ hold off
 title("Occupancy Grid Map Built Using Lidar SLAM")
 
 %% Save Occupancy Map
-save('../../data/maps/indoorAreaOccupancyMap.mat', 'map');
+save('../../data/maps/Indoor_Area/indoorAreaOccupancyMap.mat', 'map');
 
 %% Generate Image from Occupancy Map
 occMatrix = occupancyMatrix(map);
@@ -102,14 +102,14 @@ img(occMatrix >= occupied_thresh) = 0;     % Occupied = black
 img(occMatrix <= free_thresh) = 255;       % Free = white
 
 % Save images
-imwrite(img, '../../data/maps/indoorAreaOccupancyMap.pgm');
-imwrite(img, '../../data/maps/indoorAreaOccupancyMap.png');
+imwrite(img, '../../data/maps/Indoor_Area/indoorAreaOccupancyMap.pgm');
+imwrite(img, '../../data/maps/Indoor_Area/indoorAreaOccupancyMap.png');
 
 % Save YAML file
 origin = map.GridLocationInWorld;          
 resolution = 1 / map.Resolution;           
 
-fid = fopen('../../data/maps/indoorAreaOccupancyMap.yaml', 'w');
+fid = fopen('../../data/maps/Indoor_Area/indoorAreaOccupancyMap.yaml', 'w');
 fprintf(fid, 'image: indoorAreaOccupancyMap.pgm\n');
 fprintf(fid, 'resolution: %.4f\n', resolution);
 fprintf(fid, 'origin: [%.4f, %.4f, 0.0]\n', origin(1), origin(2));
@@ -141,4 +141,4 @@ hold off;
 % Save PNG with trajectory overlay
 frame = getframe(gcf);
 imWithTrajectory = frame2im(frame);
-imwrite(imWithTrajectory, '../../data/maps/indoorAreaOccupancyMapwithTrajectory.png');
+imwrite(imWithTrajectory, '../../data/maps/Indoor_Area/indoorAreaOccupancyMapwithTrajectory.png');

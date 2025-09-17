@@ -1,8 +1,8 @@
 %% CSV to MAT conversion for Lidar Scans
 
 % File paths
-csvFile = '../../data/lidar_data/collected_data/iot_factory_lidar_data_3_clean.csv';
-matFile = '../../data/lidar_data/iot_factory_lidar_data_3_clean.mat';
+csvFile = '../../data/lidar_data/collected_data/iot_factory_lidar_data_1_clean.csv';
+matFile = '../../data/lidar_data/iot_factory_lidar_data_1_clean.mat';
 
 % Load CSV data
 data = readmatrix(csvFile);
