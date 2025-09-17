@@ -1,7 +1,7 @@
 % Build Map from 2-D Lidar Scans Using SLAM
 
 % Load Laser Scans
-data = load("../../data/lidar_data/Warehouse/wareHouse.mat");
+data = load("../../data/lidar_data/wareHouse.mat");
 scans = data.wareHouseScans;
 
 % Create a lidarSLAM object and set the map resolution and the max lidar range.
