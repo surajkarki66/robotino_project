@@ -1,0 +1,701 @@
+<root>
+<paths>
+<path width="0.85" id="1" direction="1">
+<nodes>
+<node id="1" posid="1">
+<x>-13.136800</x>
+<y>2.676840</y>
+</node>
+<node id="2" posid="2">
+<x>-10.746400</x>
+<y>2.746530</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="2" direction="2">
+<nodes>
+<node id="1" posid="2">
+<x>-10.746400</x>
+<y>2.746530</y>
+</node>
+<node id="2" posid="1">
+<x>-13.136800</x>
+<y>2.676840</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="3" direction="1">
+<nodes>
+<node id="1" posid="1">
+<x>-13.136800</x>
+<y>2.676840</y>
+</node>
+<node id="2" posid="11">
+<x>-15.428079</x>
+<y>0.742207</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="4" direction="2">
+<nodes>
+<node id="1" posid="11">
+<x>-15.428079</x>
+<y>0.742207</y>
+</node>
+<node id="2" posid="1">
+<x>-13.136800</x>
+<y>2.676840</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="5" direction="1">
+<nodes>
+<node id="1" posid="1">
+<x>-13.136800</x>
+<y>2.676840</y>
+</node>
+<node id="2" posid="12">
+<x>-14.215000</x>
+<y>0.830000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="6" direction="2">
+<nodes>
+<node id="1" posid="12">
+<x>-14.215000</x>
+<y>0.830000</y>
+</node>
+<node id="2" posid="1">
+<x>-13.136800</x>
+<y>2.676840</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="7" direction="1">
+<nodes>
+<node id="1" posid="2">
+<x>-10.746400</x>
+<y>2.746530</y>
+</node>
+<node id="2" posid="3">
+<x>-8.331970</x>
+<y>2.729840</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="8" direction="2">
+<nodes>
+<node id="1" posid="3">
+<x>-8.331970</x>
+<y>2.729840</y>
+</node>
+<node id="2" posid="2">
+<x>-10.746400</x>
+<y>2.746530</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="9" direction="1">
+<nodes>
+<node id="1" posid="2">
+<x>-10.746400</x>
+<y>2.746530</y>
+</node>
+<node id="2" posid="4">
+<x>-7.640000</x>
+<y>1.329000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="10" direction="2">
+<nodes>
+<node id="1" posid="4">
+<x>-7.640000</x>
+<y>1.329000</y>
+</node>
+<node id="2" posid="2">
+<x>-10.746400</x>
+<y>2.746530</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="11" direction="1">
+<nodes>
+<node id="1" posid="2">
+<x>-10.746400</x>
+<y>2.746530</y>
+</node>
+<node id="2" posid="12">
+<x>-14.215000</x>
+<y>0.830000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="12" direction="2">
+<nodes>
+<node id="1" posid="12">
+<x>-14.215000</x>
+<y>0.830000</y>
+</node>
+<node id="2" posid="2">
+<x>-10.746400</x>
+<y>2.746530</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="13" direction="1">
+<nodes>
+<node id="1" posid="3">
+<x>-8.331970</x>
+<y>2.729840</y>
+</node>
+<node id="2" posid="4">
+<x>-7.640000</x>
+<y>1.329000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="14" direction="2">
+<nodes>
+<node id="1" posid="4">
+<x>-7.640000</x>
+<y>1.329000</y>
+</node>
+<node id="2" posid="3">
+<x>-8.331970</x>
+<y>2.729840</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="15" direction="1">
+<nodes>
+<node id="1" posid="4">
+<x>-7.640000</x>
+<y>1.329000</y>
+</node>
+<node id="2" posid="5">
+<x>-6.547166</x>
+<y>-1.464093</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="16" direction="2">
+<nodes>
+<node id="1" posid="5">
+<x>-6.547166</x>
+<y>-1.464093</y>
+</node>
+<node id="2" posid="4">
+<x>-7.640000</x>
+<y>1.329000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="17" direction="1">
+<nodes>
+<node id="1" posid="4">
+<x>-7.640000</x>
+<y>1.329000</y>
+</node>
+<node id="2" posid="6">
+<x>-5.616000</x>
+<y>-0.951000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="18" direction="2">
+<nodes>
+<node id="1" posid="6">
+<x>-5.616000</x>
+<y>-0.951000</y>
+</node>
+<node id="2" posid="4">
+<x>-7.640000</x>
+<y>1.329000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="19" direction="1">
+<nodes>
+<node id="1" posid="5">
+<x>-6.833230</x>
+<y>-1.750500</y>
+</node>
+<node id="2" posid="6">
+<x>-5.616000</x>
+<y>-0.951000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="20" direction="2">
+<nodes>
+<node id="1" posid="6">
+<x>-5.616000</x>
+<y>-0.951000</y>
+</node>
+<node id="2" posid="5">
+<x>-6.833230</x>
+<y>-1.750500</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="21" direction="1">
+<nodes>
+<node id="1" posid="5">
+<x>-6.833230</x>
+<y>-1.750500</y>
+</node>
+<node id="2">
+<x>-6.048294</x>
+<y>-3.124737</y>
+</node>
+<node id="3" posid="7">
+<x>-5.554500</x>
+<y>-3.007510</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="22" direction="2">
+<nodes>
+<node id="1" posid="7">
+<x>-5.554500</x>
+<y>-3.007510</y>
+</node>
+<node id="2">
+<x>-6.048294</x>
+<y>-3.124737</y>
+</node>
+<node id="3" posid="5">
+<x>-6.833230</x>
+<y>-1.750500</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="23" direction="1">
+<nodes>
+<node id="1" posid="5">
+<x>-6.833230</x>
+<y>-1.750500</y>
+</node>
+<node id="2">
+<x>-4.416924</x>
+<y>0.027520</y>
+</node>
+<node id="3" posid="8">
+<x>-4.336070</x>
+<y>-1.823720</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="24" direction="2">
+<nodes>
+<node id="1" posid="8">
+<x>-4.336070</x>
+<y>-1.823720</y>
+</node>
+<node id="2">
+<x>-4.416924</x>
+<y>0.027520</y>
+</node>
+<node id="3" posid="5">
+<x>-6.833230</x>
+<y>-1.750500</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="25" direction="1">
+<nodes>
+<node id="1" posid="6">
+<x>-5.616000</x>
+<y>-0.951000</y>
+</node>
+<node id="2">
+<x>-2.618871</x>
+<y>-0.820003</y>
+</node>
+<node id="3" posid="7">
+<x>-5.554500</x>
+<y>-3.007510</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="26" direction="2">
+<nodes>
+<node id="1" posid="7">
+<x>-5.554500</x>
+<y>-3.007510</y>
+</node>
+<node id="2">
+<x>-2.618871</x>
+<y>-0.820003</y>
+</node>
+<node id="3" posid="6">
+<x>-5.616000</x>
+<y>-0.951000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="27" direction="1">
+<nodes>
+<node id="1" posid="6">
+<x>-5.616000</x>
+<y>-0.951000</y>
+</node>
+<node id="2" posid="8">
+<x>-4.336070</x>
+<y>-1.823720</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="28" direction="2">
+<nodes>
+<node id="1" posid="8">
+<x>-4.336070</x>
+<y>-1.823720</y>
+</node>
+<node id="2" posid="6">
+<x>-5.616000</x>
+<y>-0.951000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="29" direction="1">
+<nodes>
+<node id="1" posid="6">
+<x>-5.616000</x>
+<y>-0.951000</y>
+</node>
+<node id="2" posid="9">
+<x>-2.594740</x>
+<y>0.314477</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="30" direction="2">
+<nodes>
+<node id="1" posid="9">
+<x>-2.594740</x>
+<y>0.314477</y>
+</node>
+<node id="2" posid="6">
+<x>-5.616000</x>
+<y>-0.951000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="31" direction="1">
+<nodes>
+<node id="1" posid="6">
+<x>-5.616000</x>
+<y>-0.951000</y>
+</node>
+<node id="2" posid="10">
+<x>-1.747000</x>
+<y>-1.418000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="32" direction="2">
+<nodes>
+<node id="1" posid="10">
+<x>-1.747000</x>
+<y>-1.418000</y>
+</node>
+<node id="2" posid="6">
+<x>-5.616000</x>
+<y>-0.951000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="33" direction="1">
+<nodes>
+<node id="1" posid="7">
+<x>-5.554500</x>
+<y>-3.007510</y>
+</node>
+<node id="2" posid="8">
+<x>-4.336070</x>
+<y>-1.823720</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="34" direction="2">
+<nodes>
+<node id="1" posid="8">
+<x>-4.336070</x>
+<y>-1.823720</y>
+</node>
+<node id="2" posid="7">
+<x>-5.554500</x>
+<y>-3.007510</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="35" direction="1">
+<nodes>
+<node id="1" posid="8">
+<x>-4.336070</x>
+<y>-1.823720</y>
+</node>
+<node id="2" posid="9">
+<x>-2.594740</x>
+<y>0.314477</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="36" direction="2">
+<nodes>
+<node id="1" posid="9">
+<x>-2.594740</x>
+<y>0.314477</y>
+</node>
+<node id="2" posid="8">
+<x>-4.336070</x>
+<y>-1.823720</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="37" direction="1">
+<nodes>
+<node id="1" posid="8">
+<x>-4.336070</x>
+<y>-1.823720</y>
+</node>
+<node id="2" posid="10">
+<x>-1.747000</x>
+<y>-1.418000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="38" direction="2">
+<nodes>
+<node id="1" posid="10">
+<x>-1.747000</x>
+<y>-1.418000</y>
+</node>
+<node id="2" posid="8">
+<x>-4.336070</x>
+<y>-1.823720</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="39" direction="1">
+<nodes>
+<node id="1" posid="8">
+<x>-4.336070</x>
+<y>-1.823720</y>
+</node>
+<node id="2">
+<x>-5.056839</x>
+<y>1.087528</y>
+</node>
+<node id="3">
+<x>-3.058819</x>
+<y>3.325364</y>
+</node>
+<node id="4">
+<x>-0.810081</x>
+<y>2.374625</y>
+</node>
+<node id="5" posid="13">
+<x>-0.503550</x>
+<y>-0.949287</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="40" direction="2">
+<nodes>
+<node id="1" posid="13">
+<x>-0.503550</x>
+<y>-0.949287</y>
+</node>
+<node id="2">
+<x>-0.810081</x>
+<y>2.374625</y>
+</node>
+<node id="3">
+<x>-3.058819</x>
+<y>3.325364</y>
+</node>
+<node id="4">
+<x>-5.056839</x>
+<y>1.087528</y>
+</node>
+<node id="5" posid="8">
+<x>-4.336070</x>
+<y>-1.823720</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="41" direction="1">
+<nodes>
+<node id="1" posid="9">
+<x>-2.594740</x>
+<y>0.314477</y>
+</node>
+<node id="2" posid="10">
+<x>-1.747000</x>
+<y>-1.418000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="42" direction="2">
+<nodes>
+<node id="1" posid="10">
+<x>-1.747000</x>
+<y>-1.418000</y>
+</node>
+<node id="2" posid="9">
+<x>-2.594740</x>
+<y>0.314477</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="43" direction="1">
+<nodes>
+<node id="1" posid="9">
+<x>-2.594740</x>
+<y>0.314477</y>
+</node>
+<node id="2" posid="13">
+<x>-0.503550</x>
+<y>-0.949287</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="44" direction="2">
+<nodes>
+<node id="1" posid="13">
+<x>-0.503550</x>
+<y>-0.949287</y>
+</node>
+<node id="2" posid="9">
+<x>-2.594740</x>
+<y>0.314477</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="45" direction="1">
+<nodes>
+<node id="1" posid="9">
+<x>-2.594740</x>
+<y>0.314477</y>
+</node>
+<node id="2" posid="14">
+<x>-0.276000</x>
+<y>0.067000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="46" direction="2">
+<nodes>
+<node id="1" posid="14">
+<x>-0.276000</x>
+<y>0.067000</y>
+</node>
+<node id="2" posid="9">
+<x>-2.594740</x>
+<y>0.314477</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="47" direction="1">
+<nodes>
+<node id="1" posid="9">
+<x>-2.594740</x>
+<y>0.314477</y>
+</node>
+<node id="2" posid="15">
+<x>-0.161829</x>
+<y>1.525210</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="48" direction="2">
+<nodes>
+<node id="1" posid="15">
+<x>-0.161829</x>
+<y>1.525210</y>
+</node>
+<node id="2" posid="9">
+<x>-2.594740</x>
+<y>0.314477</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="49" direction="1">
+<nodes>
+<node id="1" posid="10">
+<x>-1.747000</x>
+<y>-1.418000</y>
+</node>
+<node id="2" posid="13">
+<x>-0.503550</x>
+<y>-0.949287</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="50" direction="2">
+<nodes>
+<node id="1" posid="13">
+<x>-0.503550</x>
+<y>-0.949287</y>
+</node>
+<node id="2" posid="10">
+<x>-1.747000</x>
+<y>-1.418000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="51" direction="1">
+<nodes>
+<node id="1" posid="10">
+<x>-1.747000</x>
+<y>-1.418000</y>
+</node>
+<node id="2" posid="14">
+<x>-0.276000</x>
+<y>0.067000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="52" direction="2">
+<nodes>
+<node id="1" posid="14">
+<x>-0.276000</x>
+<y>0.067000</y>
+</node>
+<node id="2" posid="10">
+<x>-1.747000</x>
+<y>-1.418000</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="53" direction="1">
+<nodes>
+<node id="1" posid="10">
+<x>-1.747000</x>
+<y>-1.418000</y>
+</node>
+<node id="2" posid="15">
+<x>-0.161829</x>
+<y>1.525210</y>
+</node>
+</nodes>
+</path>
+<path width="0.85" id="54" direction="2">
+<nodes>
+<node id="1" posid="15">
+<x>-0.161829</x>
+<y>1.525210</y>
+</node>
+<node id="2" posid="10">
+<x>-1.747000</x>
+<y>-1.418000</y>
+</node>
+</nodes>
+</path>
+</paths>
+<areas/>
+</root>
